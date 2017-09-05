@@ -1,0 +1,32 @@
+body {
+    text-align: center;
+    font-family: monospace;
+}
+
+#wrapper {
+    max-width: 40em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cv {
+    text-align: left;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+h2 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1em;
+    margin-top:1em;
+}
+
+a {
+    font-weight: 400;
+    font-size: 1em;
+}
+
