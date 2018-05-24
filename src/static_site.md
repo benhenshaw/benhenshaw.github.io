@@ -58,7 +58,7 @@ title=`grep -m 1 "^# .*" $md_file_name | sed s/"# "//g`
 Now that we have the title, we can insert it into the page using `sed`.
 
 ```sh
-sed "s/{{DATE}}/$title/g"
+sed "s/{{TITLE}}/$title/g"
 ```
 
 This website also displays the date that the page was last edited in its footer. Here is how to get that information and store it in another variable.
