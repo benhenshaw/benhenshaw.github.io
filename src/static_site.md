@@ -47,7 +47,7 @@ cat head.html body.html tail.html > page.html
 This is a basic example, but one can create more complex pages using this technique. See [the source](https://github.com/benhenshaw/benhenshaw.github.io/tree/master/src) for this website for some hints.
 
 ## Inserting Macros
-Now that we have a our content in the web page, we might want to make some smaller insertions such as setting the title of the page. This can be done using find-and-replace style substitution -- also known as macros. The `sed` utility makes this relatively straightforward; just be sure to choose a keyword to substitute that isn't going to appear in the actual content and could get replaced erroneously. I've wrapped my macros in double curly brackets (`{{` and `}}`) to make sure that they are very unique.
+Now that we have a our content in the web page, we might want to make some smaller insertions such as setting the title of the page. This can be done using find-and-replace style substitution -- also known as macros. The `sed` utility makes this relatively straightforward; just be sure to choose a keyword to substitute that isn't going to appear in the actual content and could get replaced erroneously. I've wrapped my macros in curly brackets (`{` and `}`) to make sure that they are very unique.
 
 One very useful thing you might want to do is get the heading of the document. Here's how to extract the first `h1` heading from a Markdown file, and store it in a variable.
 
@@ -58,7 +58,7 @@ title=`grep -m 1 "^# .*" $md_file_name | sed s/"# "//g`
 Now that we have the title, we can insert it into the page using `sed`.
 
 ```sh
-sed "s/{{TITLE}}/$title/g"
+sed "s/{TITLE}/$title/g"
 ```
 
 This website also displays the date that the page was last edited in its footer. Here is how to get that information and store it in another variable.
