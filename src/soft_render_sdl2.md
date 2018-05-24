@@ -127,7 +127,7 @@ Now that our pixel data is in the texture, we need to display that texture on th
 SDL_RenderCopy(renderer, screen_texture, NULL, NULL);
 ```
 
-Same as before, the `NULL`s mean display the entire texture across the entire window; texture will be stretched to fill the entire window. This allows us to have display a pixel buffer that is lower (or higher) resolution than our window. Now that we have rendered our texture we must display the result of our rendering using [`SDL_RenderPresent`](https://wiki.libsdl.org/SDL_RenderPresent).
+Same as before, the `NULL`s mean display the entire texture across the entire window; texture will be stretched to fill the entire window. This allows us to display a pixel buffer that is lower (or higher) resolution than our window. Now that we have rendered our texture we must display the result of our rendering using [`SDL_RenderPresent`](https://wiki.libsdl.org/SDL_RenderPresent).
 
 ```C
 SDL_RenderPresent(renderer);
