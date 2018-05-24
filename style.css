@@ -3,8 +3,7 @@ h1, h2, h3, h4, h5, h6 { margin: 0; }
 h1 { font-size: 1.2em; }
 h2 { font-size: 1.1em; }
 h3, h4, h5, h6 { font-size: 1.0em; }
-p { text-align: justify; margin: 0.5em 0 0.5em 0; }
-/*a { color: #715588; }*/
+p { margin: 0.5em 0 0.5em 0; }
 ul { margin: 0.5em 0.5em 0.5em 0.5em; padding-left: 1em; }
 header { border-bottom: 1px dashed #999; margin-bottom: 1em; font-size: 1.2em; padding-bottom: 0.5em; }
 header h1 { display: inline; }
@@ -17,10 +16,13 @@ code a { color:black; text-overflow:;}
 figure { width: 100%; text-align: center; margin: 0;}
 figcaption { font-style: italic; }
 img { max-width: 100%; margin-left: auto; margin-right: auto; }
-#wrapper { max-width: 40em; min-width: 10em; padding: 1em 10% 1em 10%; margin: auto; }
+blockquote { margin: 1em 2em 1em 2em; }
+#wrapper { max-width: 40em; min-width: 10em; padding: 1em 1em 1em 1em; margin: auto; }
 .footnotes { font-size: 0.8em; line-height: 1.3em; margin-top: 1.0em; }
 .footnote-ref, .footnote-back { text-decoration: none; }
 .footnotes ol { padding-right: 2em; }
+
+@media only screen and (max-width: 600px) { body { font-size: 0.9em; } }
 
 /* Syntax highlighting. */
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
