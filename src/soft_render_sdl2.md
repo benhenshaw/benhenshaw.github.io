@@ -82,7 +82,7 @@ if (event.type == SDL_WINDOWEVENT)
 ### Summary
 This method is great to get jump started with software rendering in SDL2, and may work best on some platforms, such as the [Raspberry Pi](https://www.raspberrypi.org/). It takes a single function call to get access to the buffer, and another to update the window and show your graphics on screen. The downsides are that you may need to perform some kind of conversion if you aren't using the same pixel format in the rest of your code, and that you will need to access a new pixel buffer whenever the resolution of the window changes. Also, there is no way to enable [vertical sync](https://en.wikipedia.org/wiki/Screen_tearing).
 
-[Click here to see the complete code example for this method.](files/sdl2_window_buffer.c)
+[Click here to see the complete code example for accessing the window buffer.](files/sdl2_window_buffer.c)
 
 ## Method 2: *Streaming Texture*
 The second method of displaying a pixel buffer on screen is via a 'streaming' texture. This is a chunk of GPU-side memory that is displayed on screen, which you can modify using a graphics API such as OpenGL or DirectX. SDL2 offers a simple method to use streaming textures that handles the API calls for you, using its [2D Accelerated Rendering API](https://wiki.libsdl.org/CategoryRender). This method requires more work to set up, but provides features that may make it easier for you to work with the pixel buffer.
@@ -127,13 +127,40 @@ Now that our pixel data is in the texture, we need to display that texture on th
 SDL_RenderCopy(renderer, screen_texture, NULL, NULL);
 ```
 
-Same as before, the `NULL`s mean display the entire texture across the entire window. Now that we have rendered our texture we must display the result of our rendering using [`SDL_RenderPresent`](https://wiki.libsdl.org/SDL_RenderPresent).
+Same as before, the `NULL`s mean display the entire texture across the entire window; texture will be stretched to fill the entire window. This allows us to have display a pixel buffer that is lower (or higher) resolution than our window. Now that we have rendered our texture we must display the result of our rendering using [`SDL_RenderPresent`](https://wiki.libsdl.org/SDL_RenderPresent).
 
 ```C
 SDL_RenderPresent(renderer);
 ```
 
+An now our internal pixel buffer should be displayed on screen.
+
+### Extras
+I mentioned that our call to `SDL_RenderCopy` will perform stretching, but this stretching is done 1:1 with the window resolution, meaning the original pixel buffer may be stretched by different amounts in x and y. To change this, ensuring that the aspect ratio of the original image is sustained we can use [`SDL_RenderSetLogicalSize`](https://wiki.libsdl.org/SDL_RenderSetLogicalSize) just after creating the renderer. It uses [letterboxing](https://en.wikipedia.org/wiki/Letterboxing_(filming)) to achieve this. This function will also change the mouse position values such that they line up with the 'logical' resolution specified.
+
+```C
+// Set the logical resolution to the resolution
+// of our internal pixel buffer.
+SDL_RenderSetLogicalSize(renderer, 320, 240);
+```
+
+Scaling will now keep a fixed aspect ratio, but if you are building a program with low-resolution ('retro') graphics you may notice that each pixel on screen is not exactly the same size. This occurs when the internal (or logical) resolution is not a factor of the actual window resolution. This can also be fixed by using another SDL function.
+
+```C
+// This takes a boolean value; 1 isn't a special number.
+SDL_RenderSetIntegerScale(renderer, 1);
+```
+
+With these features enabled you are likely to see black bars around the pixel buffer. You may want to set the colour of this area, which you can do like so.
+
+```C
+// Set the colour to red.
+SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+```
+
 ### Summary
-***TODO***
+This method has many features that make it easier and more reliable to work with than the first, but it does take some more work to set it up. I recommend that anyone using SDL2 that wants to perform software rendering should give both methods a try, as they differ in performance on various platforms, though this second method is more often the better choice.
+
+[Click here to see the complete code example for rendering with a streaming texture.](files/sdl2_streaming_buffer.c)
 
 [^1]: It is more correct to use `uint32_t`, which is defined in `<stdint.h>`. SDL also provides a `typedef`'d version of this type called `Uint32`, which you could use instead.

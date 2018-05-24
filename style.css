@@ -4,6 +4,9 @@ h1 { font-size: 1.2em; }
 h2 { font-size: 1.1em; }
 h3, h4, h5, h6 { font-size: 1.0em; }
 p { margin: 0.5em 0 0.5em 0; }
+/*a { text-decoration: none; }*/
+/*a:hover { text-decoration: underline; }*/
+/*a:visited { color: rgb(0, 0, 238); }*/
 ul { margin: 0.5em 0.5em 0.5em 0.5em; padding-left: 1em; }
 header { border-bottom: 1px dashed #999; margin-bottom: 1em; font-size: 1.2em; padding-bottom: 0.5em; }
 header h1 { display: inline; }
@@ -11,8 +14,9 @@ footer { font-size: 0.8em; text-align: right; line-height: 1.5em; margin-top: 1.
 nav { display:inline; }
 hr { border: 0; border-top: 1px dashed #999; margin-bottom: 1.5em; }
 pre code { display:block; overflow: scroll; line-height: 1.2em; border: 1px solid #eee; border-radius: 0.5em; padding: 0.5em 0.5em 0.5em 0.5em; width: 97%; }
-code { background-color: #fff; border: 1px solid #eee; border-radius: 0.25em; padding: 0.3em 0.2em 0 0.2em; }
+code { font-size: 0.8em; font-family: Source Code Pro, monospace; background-color: #fff; border: 1px solid #eee; border-radius: 0.25em; padding: 0.3em 0.2em 0 0.2em; }
 code a { color:black; }
+code a:hover { text-decoration: none; }
 figure { width: 100%; text-align: center; margin: 0;}
 figcaption { font-style: italic; }
 img { max-width: 100%; margin-left: auto; margin-right: auto; }

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Intro to Software Rendering with SDL2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -72,7 +72,7 @@
 <a class="sourceLine" id="cb6-10" data-line-number="10">}</a></code></pre></div>
 <h3 id="summary">Summary</h3>
 <p>This method is great to get jump started with software rendering in SDL2, and may work best on some platforms, such as the <a href="https://www.raspberrypi.org/">Raspberry Pi</a>. It takes a single function call to get access to the buffer, and another to update the window and show your graphics on screen. The downsides are that you may need to perform some kind of conversion if you aren’t using the same pixel format in the rest of your code, and that you will need to access a new pixel buffer whenever the resolution of the window changes. Also, there is no way to enable <a href="https://en.wikipedia.org/wiki/Screen_tearing">vertical sync</a>.</p>
-<p><a href="files/sdl2_window_buffer.c">Click here to see the complete code example for this method.</a></p>
+<p><a href="files/sdl2_window_buffer.c">Click here to see the complete code example for accessing the window buffer.</a></p>
 <h2 id="method-2-streaming-texture">Method 2: <em>Streaming Texture</em></h2>
 <p>The second method of displaying a pixel buffer on screen is via a ‘streaming’ texture. This is a chunk of GPU-side memory that is displayed on screen, which you can modify using a graphics API such as OpenGL or DirectX. SDL2 offers a simple method to use streaming textures that handles the API calls for you, using its <a href="https://wiki.libsdl.org/CategoryRender">2D Accelerated Rendering API</a>. This method requires more work to set up, but provides features that may make it easier for you to work with the pixel buffer.</p>
 <p>Firstly, we must create an <a href="https://wiki.libsdl.org/SDL_Renderer"><code>SDL_Renderer</code></a>, and an <a href="https://wiki.libsdl.org/SDL_Texture"><code>SDL_Texture</code></a>.</p>
@@ -97,10 +97,23 @@
 <p>The <code>NULL</code> in this call is where you can specify a rectangular sub-section of the texture to update, if you only want to change it partially. We want to change the whole thing, so we pass <code>NULL</code> instead of a pointer to an <code>SDL_Rect</code>. The final parameter is the ‘pitch’ of the buffer, which is the number of bytes that make up a single row of pixels – <code>320</code> is our width, and <code>4</code> is the number of bytes in a single pixel.</p>
 <p>Now that our pixel data is in the texture, we need to display that texture on the screen. This is done using <a href="https://wiki.libsdl.org/SDL_RenderCopy"><code>SDL_RenderCopy</code></a>.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb10-1" data-line-number="1">SDL_RenderCopy(renderer, screen_texture, NULL, NULL);</a></code></pre></div>
-<p>Same as before, the <code>NULL</code>s mean display the entire texture across the entire window. Now that we have rendered our texture we must display the result of our rendering using <a href="https://wiki.libsdl.org/SDL_RenderPresent"><code>SDL_RenderPresent</code></a>.</p>
+<p>Same as before, the <code>NULL</code>s mean display the entire texture across the entire window; texture will be stretched to fill the entire window. This allows us to have display a pixel buffer that is lower (or higher) resolution than our window. Now that we have rendered our texture we must display the result of our rendering using <a href="https://wiki.libsdl.org/SDL_RenderPresent"><code>SDL_RenderPresent</code></a>.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb11-1" data-line-number="1">SDL_RenderPresent(renderer);</a></code></pre></div>
+<p>An now our internal pixel buffer should be displayed on screen.</p>
+<h3 id="extras">Extras</h3>
+<p>I mentioned that our call to <code>SDL_RenderCopy</code> will perform stretching, but this stretching is done 1:1 with the window resolution, meaning the original pixel buffer may be stretched by different amounts in x and y. To change this, ensuring that the aspect ratio of the original image is sustained we can use <a href="https://wiki.libsdl.org/SDL_RenderSetLogicalSize"><code>SDL_RenderSetLogicalSize</code></a> just after creating the renderer. It uses <a href="https://en.wikipedia.org/wiki/Letterboxing_(filming)">letterboxing</a> to achieve this. This function will also change the mouse position values such that they line up with the ‘logical’ resolution specified.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co">// Set the logical resolution to the resolution</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="co">// of our internal pixel buffer.</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">SDL_RenderSetLogicalSize(renderer, <span class="dv">320</span>, <span class="dv">240</span>);</a></code></pre></div>
+<p>Scaling will now keep a fixed aspect ratio, but if you are building a program with low-resolution (‘retro’) graphics you may notice that each pixel on screen is not exactly the same size. This occurs when the internal (or logical) resolution is not a factor of the actual window resolution. This can also be fixed by using another SDL function.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co">// This takes a boolean value; 1 isn&#39;t a special number.</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">SDL_RenderSetIntegerScale(renderer, <span class="dv">1</span>);</a></code></pre></div>
+<p>With these features enabled you are likely to see black bars around the pixel buffer. You may want to set the colour of this area, which you can do like so.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="co">// Set the colour to red.</span></a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">SDL_SetRenderDrawColor(renderer, <span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">255</span>);</a></code></pre></div>
 <h3 id="summary-1">Summary</h3>
-<p><strong><em>TODO</em></strong></p>
+<p>This method has many features that make it easier and more reliable to work with than the first, but it does take some more work to set it up. I recommend that anyone using SDL2 that wants to perform software rendering should give both methods a try, as they differ in performance on various platforms, though this second method is more often the better choice.</p>
+<p><a href="files/sdl2_streaming_buffer.c">Click here to see the complete code example for rendering with a streaming texture.</a></p>
 <section class="footnotes">
 <hr />
 <ol>

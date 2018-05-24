@@ -3,8 +3,6 @@
 
 int main()
 {
-    setbuf(stdout, 0);
-
     SDL_Init(SDL_INIT_VIDEO);
 
     SDL_Window * window = SDL_CreateWindow("",
