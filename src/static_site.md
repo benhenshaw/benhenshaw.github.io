@@ -8,11 +8,9 @@ This website is built using a simple [shell script](src/build.sh), and I will sh
 ## Markdown
 Each page of this website is initially authored in [Markdown](https://en.wikipedia.org/wiki/Markdown) -- a simple mark-up language. This marked text needs to be converted to HTML, for which there are many utilities. Here are a few that I have used[^1], in ascending order of feature count.
 
-> **[cmark](https://github.com/commonmark/cmark)** -- The reference implementation of [CommonMark](http://commonmark.org/), a more rigorously standardised version of Markdown. This implementation performs well and is very simple to use. It has only a handful of options, but includes `--smart` for some very useful punctuation conversion.
-
-> **[Hoedown](https://github.com/hoedown/hoedown)** -- This is the fastest of the bunch. Hoedown has support for several useful extensions, including tables, footnotes, and some additional style mark-up (such as underlining).
-
-> **[Pandoc](https://pandoc.org/)** -- The most feature-full option. It's a little slower than the others. I use Pandoc as it provides all of the features I want from the others, but also marks up code snippets for syntax highlighting via CSS.
++ **[cmark](https://github.com/commonmark/cmark)** -- The reference implementation of [CommonMark](http://commonmark.org/), a more rigorously standardised version of Markdown. This implementation performs well and is very simple to use. It has only a handful of options, but includes `--smart` for some very useful punctuation conversion.
++ **[Hoedown](https://github.com/hoedown/hoedown)** -- This is the fastest of the bunch. Hoedown has support for several useful extensions, including tables, footnotes, and some additional style mark-up (such as underlining).
++ **[Pandoc](https://pandoc.org/)** -- The most feature-full option. It's a little slower than the others. I use Pandoc as it provides all of the features I want from the others, but also marks up code snippets for syntax highlighting via CSS.
 
 Another useful feature to look out for is automatically converting symbols to HTML special characters (e.g. `&amp;` for &). One could also go with another mark-up language entirely, such as [reStructuredText](http://docutils.sourceforge.net/rst.html) or [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki)'s mark-up language. It's easy to get lost in option paralysis at this point, so just go for Pandoc as it has clear [installation instructions](https://pandoc.org/installing.html) on its website.
 

@@ -22,15 +22,11 @@
 </ol>
 <h2 id="markdown">Markdown</h2>
 <p>Each page of this website is initially authored in <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> – a simple mark-up language. This marked text needs to be converted to HTML, for which there are many utilities. Here are a few that I have used<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, in ascending order of feature count.</p>
-<blockquote>
-<p><strong><a href="https://github.com/commonmark/cmark">cmark</a></strong> – The reference implementation of <a href="http://commonmark.org/">CommonMark</a>, a more rigorously standardised version of Markdown. This implementation performs well and is very simple to use. It has only a handful of options, but includes <code>--smart</code> for some very useful punctuation conversion.</p>
-</blockquote>
-<blockquote>
-<p><strong><a href="https://github.com/hoedown/hoedown">Hoedown</a></strong> – This is the fastest of the bunch. Hoedown has support for several useful extensions, including tables, footnotes, and some additional style mark-up (such as underlining).</p>
-</blockquote>
-<blockquote>
-<p><strong><a href="https://pandoc.org/">Pandoc</a></strong> – The most feature-full option. It’s a little slower than the others. I use Pandoc as it provides all of the features I want from the others, but also marks up code snippets for syntax highlighting via CSS.</p>
-</blockquote>
+<ul>
+<li><strong><a href="https://github.com/commonmark/cmark">cmark</a></strong> – The reference implementation of <a href="http://commonmark.org/">CommonMark</a>, a more rigorously standardised version of Markdown. This implementation performs well and is very simple to use. It has only a handful of options, but includes <code>--smart</code> for some very useful punctuation conversion.</li>
+<li><strong><a href="https://github.com/hoedown/hoedown">Hoedown</a></strong> – This is the fastest of the bunch. Hoedown has support for several useful extensions, including tables, footnotes, and some additional style mark-up (such as underlining).</li>
+<li><strong><a href="https://pandoc.org/">Pandoc</a></strong> – The most feature-full option. It’s a little slower than the others. I use Pandoc as it provides all of the features I want from the others, but also marks up code snippets for syntax highlighting via CSS.</li>
+</ul>
 <p>Another useful feature to look out for is automatically converting symbols to HTML special characters (e.g. <code>&amp;amp;</code> for &amp;). One could also go with another mark-up language entirely, such as <a href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> or <a href="https://www.mediawiki.org/wiki/MediaWiki">MediaWiki</a>’s mark-up language. It’s easy to get lost in option paralysis at this point, so just go for Pandoc as it has clear <a href="https://pandoc.org/installing.html">installation instructions</a> on its website.</p>
 <h2 id="building-a-page">Building a Page</h2>
 <p>Once you have a way to get your content into basic HTML, it’s time to move on to generating a more complete web page. One of the simplest ways to do this by writing a page template which will wrap around your content. If you split this template into two files<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> – the first containing everything that comes before the content, and the second for everything after, you can use file concatenation to produce the final page with a utility such as <code>cat</code> on UNIX-style systems, or <code>copy</code> on Windows<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
@@ -67,7 +63,7 @@
 </ol>
 </section>
 <footer>
-This page was last updated on <strong>2018-05-24</strong>.<br>
+This page was last updated on <strong>2018-06-06</strong>.<br>
 Copyright Benedict Henshaw, all rights reserved.<br>
 </footer>
 </div>
