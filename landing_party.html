@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Landing Party: An Escape Room</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="wrapper">
+<header>
+<strong>Ben's&nbsp;Website</strong>
+<nav><a href="/">home</a>&nbsp;<a href="listing.html">index</a>&nbsp;&mdash;&nbsp;<a href="https://github.com/benhenshaw">github</a>&nbsp;<a href="https://salty.itch.io/">itch</a>&nbsp;<a href="mailto:benedicthenshaw@gmail.com">email</a></nav>
+</header>
+<h1 id="landing-party-an-escape-room">Landing Party: An Escape Room</h1>
+<p>In my third and final year at <a href="https://www.gold.ac.uk/">Goldsmiths, University of London</a> I worked on an <a href="https://en.wikipedia.org/wiki/Escape_room">escape room</a> with three other students<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, for a module called <em>Pervasive Gaming and Immersive Theatre</em>. The project was about crash landing a space ship on the surface of a planet. Here I will share some of the details of the experience as it is unlikely to be run again.</p>
+<iframe src="https://www.youtube-nocookie.com/embed/BITzAWG2GfA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+<h2 id="conception">Conception</h2>
+<p>The initial idea began as the concept of limited communication. In order to best express this concept, communication would need to be centre to the tasks that players were tackling. We achieved this by having hidden information that players must communicate to each other to complete their objectives, reified by dividing the players up into two separate rooms, each with their own information and tasks.</p>
+<p>The theme and narrative of the piece came naturally when considering ways in which we could limit or control communication; poor reception, lost signals, and backup text communication: remote space exploration. With our core concept in place, we wrapped our split-rooms mechanic in the theme of a spacecraft trying to land on a remote base. This also conveniently gave a reason for time-limiting the experience: the ship will crash into the surface of the planet given enough time.</p>
+<h2 id="description">Description</h2>
+<p><em>This is a description of the entire escape room experience as it was implemented for the showing on the 22nd of March, 2018:</em></p>
+<p>When an attendee enters the building they are given a ticket with a geometric symbol on it. They are lead to a room with a projection and voice over that tells them which of two rooms to enter, the <strong>ship</strong> or the <strong>base</strong>, based on the symbol on their ticket. Once the attendees have entered their rooms the doors are closed and the experience begins.</p>
+<p>Both teams are equipped with a voice intercom system, allowing them to communicate, and are confronted with a locked computer to which they must find the password. In order to complete this puzzle, the <strong>ship</strong>’s inhabitants must read the <a href="https://en.wikipedia.org/wiki/Cyrillic_script">Cyrillic</a> letters from a poster in their room to the <strong>base</strong> team, who has a computer keyboard with Cyrillic letters on it. The password can be deciphered by matching each Cyrillic character to the Latin character that shares the same key.</p>
+<p>Once both teams have entered the correct password, a voice will announce to both teams that they must press the button to start the ‘automated landing process’. In actuality, this will trigger the lights and intercom to cut out, and a warning message to announce that a malfunction has occurred. Now that the teams cannot talk to each other, they will need to use the computer’s text communication (set up like an instant messenger) to continue to work together.</p>
+<p>The <strong>base</strong> team must then solve a puzzle by connecting two of eight wires in order to turn on three LEDs on a physical map. One of these LEDs is marked ‘BASE’. The team will need to communicate this information to the <strong>ship</strong> team (using the text chat). The <strong>ship</strong> team have a radar screen on their computer. There are three coloured blips on the radar, matching the colours of the LEDs. They must correctly identify the LED that was labelled ‘BASE’, and then use a third screen, the ‘CONTROL’ screen, to enter a direction of travel, such that they land on top of that blip. This can be failed, ending the experience.</p>
+<p>Once the <strong>ship</strong> has successfully landed, the <strong>ship</strong> team will need to communicate a sequence of four colours from a strip of LEDs to the <strong>base</strong> team; these lights were only visible once the power had gone out. With this information, the <strong>base</strong> team can connect four wires on the back of a panel containing a fingerprint sensor. Once correctly connected, a member of that team must place each finger on the sensor, in the order dictated on screen. Once that has been completed, the doors will unlock, the teams will be reunited, an announcement will be made, and the attendees will be escorted out.</p>
+<h3 id="control-room">Control Room</h3>
+<p>The team running the experience have a control room which contains screens displaying a camera feed from each room, power switches to all major components of the experience, and a speaker to play ambient sound and voice over. This allowed us to observe and record our attendees, and to trigger key events in the experience at the right time.</p>
+<h2 id="implementation">Implementation</h2>
+<p>While there were many interesting and complex components in the escape room, I would like to highlight the on-screen interface and network code that I implemented.</p>
+<iframe src="https://www.youtube-nocookie.com/embed/lhiUzz0yYzQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+<p>The system was written in C using <a href="https://libsdl.org/">SDL2</a> and <a href="http://enet.bespin.org/">ENet</a>. As the experience uses a separate computer in each room, any data had to be transferred between them over a local network. A dedicated server passes text between the clients, and text rendering is done using a bitmap font and custom rendering routine.</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Kotryna Sajeviciute, Daniel San, and Alice Casey.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+<footer>
+This page was last updated on <strong>2018-06-06</strong>.<br>
+Copyright Benedict Henshaw, all rights reserved.<br>
+</footer>
+</div>
+</body>
+</html>
