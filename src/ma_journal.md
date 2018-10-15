@@ -11,7 +11,7 @@ This is a weekly journal kept during my MA in Independent Games and Playable Exp
 # Week 01 -- Labyrinth
 During the past few weeks I have been working on a small game idea. It started as a demonstration of a 2.5D ray-tracing technique, in the style of Wolfenstein 3D. It runs at a low resolution, and uses very small textures.
 
-<video src="files/labyrinth_demo.mp4" controls loop>
+<video src="files/labyrinth_demo.mp4" poster="files/labyrinth_demo_snap.jpg" controls loop>
     A short video of the ray-tracing demo.
     Unfortunately, your browser does not support the video tag.
 </video>
