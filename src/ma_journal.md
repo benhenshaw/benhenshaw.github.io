@@ -89,3 +89,6 @@ Once this initial bond is formed, and the viewers are inside the circle, the mag
 This is where the magician does their 'magic'. A magician does not need to perform something truly impossible, only something that reaches outside the viewer's mental model of the situation. In games, this could be compared to someone cheating at Monopoly by stealing extra money -- but not getting caught. One player has stepped outside the magic circle, but the other players are unaware. Some video games do this with NPCs, giving them extra resources behind the scenes (such as more units in an RTS) to make them more difficult to compete against. If the other players are made aware then the circle is broken, as players will need to resolve a problem that exists outside the game rules.
 
 I think there are some interesting takeaways from this for games. The way in which a magician explicitly designs the steps that they will take to form the magic circle is something games can also do to improve the experience of a player who has just started playing.
+
+#### This Week's Thoughts
++ [Dan-Ball](https://dan-ball.jp/en/) is a website full of weird and interesting games, and it has been around for a long time. [Powder game](https://dan-ball.jp/en/javagame/dust2/) is my favourite, and [this weird plant simulator](https://dan-ball.jp/en/javagame/aquarium/) is also cool.
