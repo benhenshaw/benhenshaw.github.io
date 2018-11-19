@@ -76,3 +76,16 @@ If I have time next week, I will try to add some gameplay and make something mor
 #### This Week's Thoughts
 + I have enjoyed teaching programming for the last few years, but I have noticed that I remember less and less what it is like to learn for the first time -- In some ways I think this will make me a less effective introductory teacher. I hope I can make up for this by planning my lessons more carefully, and taking in feedback.
 + I can't wait for Katamari Damacy to come out on Nintendo Switch and PC later this year -- it's my favourite game of all time, but I've only played it emulated.
+
+---
+
+# Week 04 -- Magic Circle
+I have been thinking a lot about the magic circle as it applies to many situations in life. One such application struck me as worth investigating -- "Magic". A magician uses the magic circle to their benefit in several ways.
+
+Firstly, they form a strong circle with the viewers by carefully giving them pieces of information ("This is a full deck of cards, take a look!") and on-boarding them so that each viewer is sure of their understanding of the situation, and places some trust in that understanding. This is something that video games also do when a player first starts playing -- giving the player cues to reinforce their understanding of the situation (can't walk through walls, other characters look at you as you walk passed confirming your existence to them, etc.).
+
+Once this initial bond is formed, and the viewers are inside the circle, the magician will begin to perform an act. Given the set-up, viewers will have an expectation of the outcome. Their mental model of the situation will form its own prediction.
+
+This is where the magician does their 'magic'. A magician does not need to perform something truly impossible, only something that reaches outside the viewer's mental model of the situation. In games, this could be compared to someone cheating at Monopoly by stealing extra money -- but not getting caught. One player has stepped outside the magic circle, but the other players are unaware. Some video games do this with NPCs, giving them extra resources behind the scenes (such as more units in an RTS) to make them more difficult to compete against. If the other players are made aware then the circle is broken, as players will need to resolve a problem that exists outside the game rules.
+
+I think there are some interesting takeaways from this for games. The way in which a magician explicitly designs the steps that they will take to form the magic circle is something games can also do to improve the experience of a player who has just started playing.
