@@ -1,5 +1,5 @@
 
-+ [MA Game Design Journal](ma_journal.html) -- 2018-11-19
++ [MA Game Design Journal](ma_journal.html) -- 2018-12-26
++ [Intro to Software Rendering with SDL2](soft_render_sdl2.html) -- 2018-12-26
++ [Build Your Own Static Site Generator](static_site.html) -- 2018-12-26
 + [Landing Party: An Escape Room](landing_party.html) -- 2018-06-06
-+ [Build Your Own Static Site Generator](static_site.html) -- 2018-06-06
-+ [Intro to Software Rendering with SDL2](soft_render_sdl2.html) -- 2018-05-24

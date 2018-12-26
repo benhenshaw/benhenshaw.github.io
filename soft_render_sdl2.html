@@ -46,9 +46,9 @@
 <h2 id="method-1-accessing-the-window-buffer">Method 1: <em>Accessing the Window Buffer</em></h2>
 <p>The simplest method of getting pixels on screen is the function <a href="https://wiki.libsdl.org/SDL_GetWindowSurface"><code>SDL_GetWindowSurface</code></a>. It gives back an <a href="https://wiki.libsdl.org/SDL_Surface"><code>SDL_Surface</code></a> containing our pixel buffer. We can then modify this buffer and display the changes we made using <a href="https://wiki.libsdl.org/SDL_UpdateWindowSurface"><code>SDL_UpdateWindowSurface</code></a>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb2-1" title="1">SDL_Surface * window_surface = SDL_GetWindowSurface(window);</a></code></pre></div>
-<p>Within this structure there is a pointer to the raw pixel buffer called <code>pixels</code>. This pointer is of type <code>void *</code>, so we need to cast it to be able to use it. You can do this by assigning the value of the internal pointer to your own pointer of the correct type – <code>unsigned int</code><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>Within this structure there is a pointer to the raw pixel buffer called <code>pixels</code>. This pointer is of type <code>void *</code>, so we need to cast it to be able to use it. You can do this by assigning the value of the internal pointer to your own pointer of the correct type — <code>unsigned int</code><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb3-1" title="1"><span class="dt">unsigned</span> <span class="dt">int</span> * pixels = window_surface-&gt;pixels;</a></code></pre></div>
-<p>You can now access the pixel buffer directly. To set values of pixels using their <code>(x, y)</code> coordinates, you must use the formula <code>x + y * width</code> – where <code>width</code> is the width of the pixel buffer – to index into the buffer.</p>
+<p>You can now access the pixel buffer directly. To set values of pixels using their <code>(x, y)</code> coordinates, you must use the formula <code>x + y * width</code> — where <code>width</code> is the width of the pixel buffer — to index into the buffer.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb4-1" title="1"><span class="co">// The coordinates of our pixel.</span></a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="dt">int</span> x = <span class="dv">10</span>;</a>
 <a class="sourceLine" id="cb4-3" title="3"><span class="dt">int</span> y = <span class="dv">30</span>;</a>
@@ -94,7 +94,7 @@
 <a class="sourceLine" id="cb8-6" title="6"><span class="dt">unsigned</span> <span class="dt">int</span> * pixels = malloc(<span class="dv">320</span> * <span class="dv">240</span> * <span class="dv">4</span>);</a></code></pre></div>
 <p>We now have everything we need to display our graphics on screen, but this must be done in a few stages. Firstly, we must get our pixel data from the <code>pixels</code> buffer into the <code>screen_texture</code>. This is done using the function <a href="https://wiki.libsdl.org/SDL_UpdateTexture"><code>SDL_UpdateTexture</code></a>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb9-1" title="1">SDL_UpdateTexture(screen_texture, NULL, pixels, <span class="dv">320</span> * <span class="dv">4</span>);</a></code></pre></div>
-<p>The <code>NULL</code> in this call is where you can specify a rectangular sub-section of the texture to update, if you only want to change it partially. We want to change the whole thing, so we pass <code>NULL</code> instead of a pointer to an <code>SDL_Rect</code>. The final parameter is the ‘pitch’ of the buffer, which is the number of bytes that make up a single row of pixels – <code>320</code> is our width, and <code>4</code> is the number of bytes in a single pixel.</p>
+<p>The <code>NULL</code> in this call is where you can specify a rectangular sub-section of the texture to update, if you only want to change it partially. We want to change the whole thing, so we pass <code>NULL</code> instead of a pointer to an <code>SDL_Rect</code>. The final parameter is the ‘pitch’ of the buffer, which is the number of bytes that make up a single row of pixels — <code>320</code> is our width, and <code>4</code> is the number of bytes in a single pixel.</p>
 <p>Now that our pixel data is in the texture, we need to display that texture on the screen. This is done using <a href="https://wiki.libsdl.org/SDL_RenderCopy"><code>SDL_RenderCopy</code></a>.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb10-1" title="1">SDL_RenderCopy(renderer, screen_texture, NULL, NULL);</a></code></pre></div>
 <p>Same as before, the <code>NULL</code>s mean display the entire texture across the entire window; texture will be stretched to fill the entire window. This allows us to display a pixel buffer that is lower (or higher) resolution than our window. Now that we have rendered our texture we must display the result of our rendering using <a href="https://wiki.libsdl.org/SDL_RenderPresent"><code>SDL_RenderPresent</code></a>.</p>
@@ -121,7 +121,7 @@
 </ol>
 </section>
 <footer>
-This page was last updated on <strong>2018-05-24</strong>.<br>
+This page was last updated on <strong>2018-12-26</strong>.<br>
 Copyright Benedict Henshaw, all rights reserved.<br>
 </footer>
 </div>

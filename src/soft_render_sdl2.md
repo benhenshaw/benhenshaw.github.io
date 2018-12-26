@@ -39,13 +39,13 @@ The simplest method of getting pixels on screen is the function [`SDL_GetWindowS
 SDL_Surface * window_surface = SDL_GetWindowSurface(window);
 ```
 
-Within this structure there is a pointer to the raw pixel buffer called `pixels`. This pointer is of type `void *`, so we need to cast it to be able to use it. You can do this by assigning the value of the internal pointer to your own pointer of the correct type -- `unsigned int`[^1].
+Within this structure there is a pointer to the raw pixel buffer called `pixels`. This pointer is of type `void *`, so we need to cast it to be able to use it. You can do this by assigning the value of the internal pointer to your own pointer of the correct type --- `unsigned int`[^1].
 
 ```C
 unsigned int * pixels = window_surface->pixels;
 ```
 
-You can now access the pixel buffer directly. To set values of pixels using their `(x, y)` coordinates, you must use the formula `x + y * width` -- where `width` is the width of the pixel buffer -- to index into the buffer.
+You can now access the pixel buffer directly. To set values of pixels using their `(x, y)` coordinates, you must use the formula `x + y * width` --- where `width` is the width of the pixel buffer --- to index into the buffer.
 
 ```C
 // The coordinates of our pixel.
@@ -119,7 +119,7 @@ We now have everything we need to display our graphics on screen, but this must 
 SDL_UpdateTexture(screen_texture, NULL, pixels, 320 * 4);
 ```
 
-The `NULL` in this call is where you can specify a rectangular sub-section of the texture to update, if you only want to change it partially. We want to change the whole thing, so we pass `NULL` instead of a pointer to an `SDL_Rect`. The final parameter is the 'pitch' of the buffer, which is the number of bytes that make up a single row of pixels -- `320` is our width, and `4` is the number of bytes in a single pixel.
+The `NULL` in this call is where you can specify a rectangular sub-section of the texture to update, if you only want to change it partially. We want to change the whole thing, so we pass `NULL` instead of a pointer to an `SDL_Rect`. The final parameter is the 'pitch' of the buffer, which is the number of bytes that make up a single row of pixels --- `320` is our width, and `4` is the number of bytes in a single pixel.
 
 Now that our pixel data is in the texture, we need to display that texture on the screen. This is done using [`SDL_RenderCopy`](https://wiki.libsdl.org/SDL_RenderCopy).
 
