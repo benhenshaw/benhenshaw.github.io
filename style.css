@@ -15,8 +15,9 @@ nav { display:inline; }
 hr { border: 0; border-top: 1px dashed #999; margin: 1.5em 0 1.5em 0; }
 pre code { display:block; overflow: auto; line-height: 1.2em; border: 1px solid #eee; border-radius: 0.5em; padding: 0.5em 0.5em 0.5em 0.5em; width: 97%; }
 code { font-size: 0.8em; font-family: Source Code Pro, monospace; background-color: #fff; border: 1px solid #eee; border-radius: 0.25em; padding: 0 0.2em 0 0.2em; }
-code a { color:black; }
-code a:hover { text-decoration: none; }
+code a { color:black; border: none; }
+code a:hover { border: none; }
+a code:hover { border-bottom: none; }
 figure { width: 100%; text-align: center; margin: 0;}
 figcaption { font-style: italic; }
 img { display: block; max-width: 100%; margin: auto; }
