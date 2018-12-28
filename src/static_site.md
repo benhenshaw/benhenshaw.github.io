@@ -1,3 +1,4 @@
+<!-- Created: 2018-05-24 -->
 # Build Your Own Static Site Generator
 This website is built using a simple [shell script](src/build.sh), and I will show you how to construct a similar static site generator using some UNIX utilities and a Markdown parser. It will perform the following:
 

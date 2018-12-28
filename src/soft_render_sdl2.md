@@ -1,3 +1,4 @@
+<!-- Created: 2018-05-24 -->
 # Intro to Software Rendering with SDL2
 Lets display some pixel data on the screen with [SDL2](https://libsdl.org/) in C. There are a few ways to do this, each with their own trade-offs. I am going to assume that you already have SDL2 set up. Here is the basic framework that our program will use, with the relevant pieces slotted in where the comments are.
 

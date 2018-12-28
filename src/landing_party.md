@@ -1,3 +1,4 @@
+<!-- Created: 2018-06-06 -->
 # Landing Party: An Escape Room
 In my third and final year at [Goldsmiths, University of London](https://www.gold.ac.uk/) I worked on an [escape room](https://en.wikipedia.org/wiki/Escape_room) with three other students[^1], for a module called *Pervasive Gaming and Immersive Theatre*. The project was about crash landing a space ship on the surface of a planet. Here I will share some of the details of the experience as it is unlikely to be run again.
 

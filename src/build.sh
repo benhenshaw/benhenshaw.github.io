@@ -13,15 +13,20 @@ rm ../*.html
 echo > listing.md
 
 # Get all of the Markdown files in the current folder.
-files=`ls -t *.md`
+# files=`ls -v *.md`
+
+# The order that these files are read dictates what order they appear in
+# the site map, so for now I am just listing them manually in the order
+# that they were written, newest first.
+files="index.md listing.md net_for_games.md ma_journal.md landing_party.md soft_render_sdl2.md static_site.md"
 
 for md_file in $files
 do
     # Strip '.md' from the file name.
     file_base=`basename $md_file .md`
 
-    # Get the date that the file was last modified.
-    date=`stat -t "%Y-%m-%d" -f "%Sm" $md_file`
+    # Get the post publish date from the comment at the start of the file.
+    created=`cat $md_file | grep -m 1 -o "<!--.*-->" | grep -o "\d\d\d\d-\d\d-\d\d"`
 
     # Get the first h1 heading on the page.
     doc_title=`grep -m 1 "^# .*" $md_file | sed s/"# "//g`
@@ -29,7 +34,7 @@ do
     # Write this page to the site map, ignoring any that don't have a title.
     if [[ -n "$doc_title" ]]
     then
-        echo "+ [$doc_title]($file_base.html) -- $date" >> listing.md
+        echo "$created --- [$doc_title]($file_base.html)\n" >> listing.md
     fi
 done
 
@@ -56,6 +61,7 @@ do
     # Insert variables.
     cat head.html tmp.html foot.html | \
     sed "s/{{DATE}}/$date/g" |         \
+    sed "s/{{CREATED}}/$created/g" |   \
     sed "s/{{FILE}}/$file_base/g" |    \
     sed "s/{{TITLE}}/$doc_title/g"     \
         > ../$file_base.html

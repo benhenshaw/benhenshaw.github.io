@@ -1,3 +1,4 @@
+<!-- Created: 2018-10-15 -->
 # MA Game Design Journal
 > Approaches to Play\
 > MA Independent Games and Playable Experience Design\
