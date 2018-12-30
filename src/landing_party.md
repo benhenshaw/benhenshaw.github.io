@@ -2,7 +2,9 @@
 # Landing Party: An Escape Room
 In my third and final year at [Goldsmiths, University of London](https://www.gold.ac.uk/) I worked on an [escape room](https://en.wikipedia.org/wiki/Escape_room) with three other students[^1], for a module called *Pervasive Gaming and Immersive Theatre*. The project was about crash landing a space ship on the surface of a planet. Here I will share some of the details of the experience as it is unlikely to be run again.
 
+<figure>
 <iframe src="https://www.youtube-nocookie.com/embed/BITzAWG2GfA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</figure>
 
 ## Conception
 The initial idea began as the concept of limited communication. In order to best express this concept, communication would need to be centre to the tasks that players were tackling. We achieved this by having hidden information that players must communicate to each other to complete their objectives, reified by dividing the players up into two separate rooms, each with their own information and tasks.

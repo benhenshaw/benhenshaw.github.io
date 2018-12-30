@@ -107,12 +107,12 @@ I think there are some interesting takeaways from this for games. The way in whi
 
 ---
 
-The remainder of this journal does not follow a weekly schedule. Given that some weeks had more relevant happenings than others, I have decided to move to topic-based posts instead of weekly.
+The remainder of this journal does not follow a weekly schedule. Given that some weeks had more relevant happenings than others, and that I took some time off, I have decided to move to topic-based posts instead of weekly.
 
 ---
 
 ## The Implications of Virtual World Design
-I have always been fascinated by Massively Multi-player Games. Since my earliest exposure to on-line games, I have craved the experience of shared persistent virtual spaces. As far as my memory is concerned, the first MMO I played was [RuneScape](https://en.wikipedia.org/wiki/Old_School_RuneScape). This game is unbelievably [grind-y](https://en.wikipedia.org/wiki/Grinding_%28gaming%29). It differs from many Role-Playing Games, as it has no classes or races.
+I have always been fascinated by [Massively Multi-player On-line Games](https://en.wikipedia.org/wiki/Massively_multiplayer_online_game). Since my earliest exposure to on-line games, I have craved the experience of shared persistent virtual spaces. As far as my memory is concerned, the first MMO I played was [RuneScape](https://en.wikipedia.org/wiki/Old_School_RuneScape). This game is unbelievably [grind-y](https://en.wikipedia.org/wiki/Grinding_%28gaming%29). It differs from many Role-Playing Games, as it has no classes or races.
 
 ![Screen-shot of **Old School RuneScape**, a recent official re-release of RuneScape 2 (2007).](files/runescape_stats.png)
 
@@ -120,14 +120,14 @@ In RuneScape, players have a large set of skills each of which starts at level 1
 
 This freedom to create your own play-style in a free-form way has not been picked up by RPGs at large, though it solves one of their major common issues: when a player starts an RPG, they are usually presented with detailed and game-changing choices, and don't have a clue what any of them will mean for their experience.
 
-![Fallout 4 (2015) presents the player with complex statistical decisions, while they likely have no idea what game-play impacts those choices will have.](files/fallout4_stat_selection.jpg)
+![Fallout 4 (2015) presents new players with complex statistical decisions, while they likely have no idea what game-play impacts those choices will have.](files/fallout4_stat_selection.jpg)
 
 This progress structure has implications for the message of the game. MMORPGs that enforce game-play constraints on players who have selected a particular race or class at the start of the game may be making unintentional statements about segregation and real-world class hierarchies. World of Warcraft (2004) allows players to choose certain races, but the game has no concept of mixed races. In a small but very real way Blizzard have put forward the idea that races do not, or should not, mix. Additionally, WoW suggests that a player's background decides the extent of what they can ever achieve.
 
 > **"One cannot not communicate."**\
 > --- *[Paul Watzlawick](https://en.wikipedia.org/wiki/Paul_Watzlawick#Five_basic_axioms)'s first axiom of communication*
 
-In his [2010 GDC talk](https://gdcvault.com/play/1013804/MUD-Messrs-Bartle-and-Trubshaw), Richard Bartle outlines his design decisions for [MUD (1978)](https://en.wikipedia.org/wiki/MUD1), which is often considered the *first MMO*. MUD has 10 levels; all players start at level 1 and progress to level 10, with each step taking significant effort and often requiring assistance from other players. His rationale for this progression system stems from his own oppression in the British class system, being a northern lad with a strong accent. He created a world where no pre-existing class system exists, to give all players the freedom to succeed with equal footing.
+In his [2010 GDC talk](https://gdcvault.com/play/1013804/MUD-Messrs-Bartle-and-Trubshaw), Richard Bartle outlines his design decisions for [MUD (1978)](https://en.wikipedia.org/wiki/MUD1), which is often considered the *first MMO*. MUD has 10 levels; all players start at level 1 and progress to level 10, with each step taking significant effort and often requiring assistance from other players. His rationale for this progression system stems from his own oppression in the British class system, being a northern lad with a strong accent. He created a world where no pre-existing class system exists, to give all players the freedom to succeed with equal footing, and also suggests that people should, and *must*, help eachother to reach their goals.
 
 ![The character creator in World of Warcraft (2004) forces players to choose their race and class to begin playing the game.](files/wow_character_creator.jpg)
 
