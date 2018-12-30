@@ -3,19 +3,28 @@
 > Approaches to Play\
 > MA Independent Games and Playable Experience Design\
 > Benedict Henshaw\
-> 2018 - 2019
+> 2018 -- 2019
 
 This is a weekly journal kept during my MA in Independent Games and Playable Experience Design at Goldsmiths, Univesity of London.
+
+#### Contents
++ [Week 01 --- Labyrinth](#week-01-labyrinth)
++ [Week 02 --- Fortune](#week-02-fortune)
++ [Week 03 --- Falling Blocks](#week-03-falling-blocks)
++ [Week 04 --- Magic Circle](#week-04-magic-circle)
++ [The Implications of Virtual World Design](#the-implications-of-virtual-world-design)
 
 ---
 
 # Week 01 --- Labyrinth
 During the past few weeks I have been working on a small game idea. It started as a demonstration of a 2.5D ray-tracing technique, in the style of Wolfenstein 3D. It runs at a low resolution, and uses very small textures.
 
+<figure>
 <video src="files/labyrinth_demo.mp4" poster="files/labyrinth_demo_snap.jpg" controls loop>
     A short video of the ray-tracing demo.
     Unfortunately, your browser does not support the video tag.
 </video>
+</figure>
 
 The goal is very simple - find your way through a labyrinth. The twist is that players can draw on the walls, and their drawings are shared via a server, so players can see each others drawings. I intend to make the labyrinth confusing and complex, so my intention for this mechanic is to allow players to help each other asynchronously --- leaving notes and markings for each other, returning to the game over time, and progressing together to move deeper into the labyrinth, and to find the exit. I chose drawing on walls over something like placing simple markers as I feel it allows for more player expression.
 
@@ -67,12 +76,14 @@ Does this property of 'instant readability' exist outside of puzzle games? Maybe
 
 Inspired by these games, I put together the framework for a falling block game. The first demo just randomly drops blocks every *tick*, and deletes any row if it is filled, like Tetris --- it makes for quite a nice screen-saver!
 
+<figure>
 <video src="files/falling_blocks.mp4" poster="files/falling_blocks_snap.jpg" width="40%" controls loop>
     The first demo of the falling block game.
     Unfortunately, your browser does not support the video tag.
 </video>
+</figure>
 
-If I have time next week, I will try to add some gameplay and make something more interesting with this.
+If I have time next week, I will try to add some game-play and make something more interesting with this.
 
 #### This Week's Thoughts
 + I have enjoyed teaching programming for the last few years, but I have noticed that I remember less and less what it is like to learn for the first time --- In some ways I think this will make me a less effective introductory teacher. I hope I can make up for this by planning my lessons more carefully, and taking in feedback.
@@ -93,3 +104,31 @@ I think there are some interesting takeaways from this for games. The way in whi
 
 #### This Week's Thoughts
 + [Dan-Ball](https://dan-ball.jp/en/) is a website full of weird and interesting games, and it has been around for a long time. [Powder game](https://dan-ball.jp/en/javagame/dust2/) is my favourite, and [this weird plant simulator](https://dan-ball.jp/en/javagame/aquarium/) is also cool.
+
+---
+
+The remainder of this journal does not follow a weekly schedule. Given that some weeks had more relevant happenings than others, I have decided to move to topic-based posts instead of weekly.
+
+---
+
+## The Implications of Virtual World Design
+I have always been fascinated by Massively Multi-player Games. Since my earliest exposure to on-line games, I have craved the experience of shared persistent spaces. As far as my memory is concerned, the first MMO I played was [RuneScape](https://en.wikipedia.org/wiki/Old_School_RuneScape). This game is unbelievably [grind-y](https://en.wikipedia.org/wiki/Grinding_%28gaming%29). It differs from many Role-Playing Games of the time, as it has no classes or races.
+
+![Screen-shot of **Old School RuneScape**, a recent official re-release of RuneScape 2 (2007).](files/runescape_stats.png)
+
+In RuneScape, players have a large set of skills each of which starts at level 1, and can be increased to level 99. These skills had various impacts on the player's capabilities in the game. High stats in *Strength* and *Attack* make a player effective at *mêlée* combat. Some stats, such as *Woodcutting* and *Fishing* allow players to collect resources from the game world.
+
+This freedom to create your own play-style in a free-form way has not been picked up by RPGs at large, though it solves one of their major common issues: when a player starts an RPG, they are usually presented with detailed and game-changing choices, and don't have a clue what any of them will mean for their experience.
+
+![Fallout 4 (2015) presents the player with complex statistical decisions, while they likely have no idea what game-play impacts those choices will have.](files/fallout4_stat_selection.jpg)
+
+This progress structure has implications for the message of the game. MMORPGs that enforce game-play constraints on players who have selected a particular race or class at the start of the game may be making unintentional statements about segregation and real-world class hierarchies. World of Warcraft (2004) allows players to choose certain races, but the game has no concept of mixed races. In a small but very real way Blizzard have put forward the idea that races do not, or should not, mix. Additionally, WoW suggests that a player's background decides the extent of what they can ever achieve.
+
+> **"One cannot not communicate."**\
+> --- *[Paul Watzlawick](https://en.wikipedia.org/wiki/Paul_Watzlawick#Five_basic_axioms)'s first axiom of communication*
+
+In his [2010 GDC talk](https://gdcvault.com/play/1013804/MUD-Messrs-Bartle-and-Trubshaw), Richard Bartle outlines his (and his partner's) design decisions for [MUD (1978)](https://en.wikipedia.org/wiki/MUD1), which is often considered the *first MMO*. MUD has 10 levels. All players start at level 1 and progress to level 10, with each step taking significant effort and often requiring assistance from other players. His rationale for this progression system stems from his own oppression in the British class system, being a northern lad with a strong accent. He created a world where no pre-existing class system exists, to give all players the freedom to succeed with equal footing.
+
+Though many modern MMOs stem from MUD, incorporating its level-based progress structure, I am hard pressed to find a single example that demonstrates some consideration for the meaning of this decision. In WoW, Guild Wars, and many others, the process of levelling up feels like a vestigial limb, a holdover from some old video game DNA that nobody wants to amputate. Players of these games use the term **Endgame** to describe activities to be done once the player has reached the maximum level, though in contrast most players believe this point to be where the game truly begins. Why not start the game here?
+
+To me, the pre-endgame phase of World of Warcraft feels like adolescence. It's an awkward phase, where most players don't truly fit in, just waiting for the moment that they can begin to play with the adults. When I first played WoW I never felt the desire to level up. I stayed in the early teens for a very long time (months!), while most players continued on to higher and higher levels. I was about 12 years old at the time --- perhaps this is a reflection of my own subtle desire to never grow up.

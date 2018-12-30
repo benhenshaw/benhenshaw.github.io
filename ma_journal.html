@@ -19,15 +19,25 @@
 <p>Approaches to Play<br />
 MA Independent Games and Playable Experience Design<br />
 Benedict Henshaw<br />
-2018 - 2019</p>
+2018 – 2019</p>
 </blockquote>
 <p>This is a weekly journal kept during my MA in Independent Games and Playable Experience Design at Goldsmiths, Univesity of London.</p>
+<h4 id="contents">Contents</h4>
+<ul>
+<li><a href="#week-01-labyrinth">Week 01 — Labyrinth</a></li>
+<li><a href="#week-02-fortune">Week 02 — Fortune</a></li>
+<li><a href="#week-03-falling-blocks">Week 03 — Falling Blocks</a></li>
+<li><a href="#week-04-magic-circle">Week 04 — Magic Circle</a></li>
+<li><a href="#the-implications-of-virtual-world-design">The Implications of Virtual World Design</a></li>
+</ul>
 <hr />
 <h1 id="week-01-labyrinth">Week 01 — Labyrinth</h1>
 <p>During the past few weeks I have been working on a small game idea. It started as a demonstration of a 2.5D ray-tracing technique, in the style of Wolfenstein 3D. It runs at a low resolution, and uses very small textures.</p>
+<figure>
 <video src="files/labyrinth_demo.mp4" poster="files/labyrinth_demo_snap.jpg" controls loop>
 A short video of the ray-tracing demo. Unfortunately, your browser does not support the video tag.
 </video>
+</figure>
 <p>The goal is very simple - find your way through a labyrinth. The twist is that players can draw on the walls, and their drawings are shared via a server, so players can see each others drawings. I intend to make the labyrinth confusing and complex, so my intention for this mechanic is to allow players to help each other asynchronously — leaving notes and markings for each other, returning to the game over time, and progressing together to move deeper into the labyrinth, and to find the exit. I chose drawing on walls over something like placing simple markers as I feel it allows for more player expression.</p>
 <p>There are still some technical challenges involved in this that I have yet to solve. Most prominent is transferring the data for the wall drawings. Walls have 32x32 textures. If I were to store each pixel as one <em>bit</em>, one wall would require 128 <em>bytes</em> of storage to hold all the drawing data. If I were to limit the size of one level of the labyrinth to 16x16 tiles, then I would need a maximum of 32 Megabytes (16 x 16 x 128) to hold all of the drawing data; I would also prefer to have larger levels than this. This is too much data to be transferring often — It may take several minutes to download on slower connections. Thus I will need to construct a <em>streaming</em> technique that will load in drawing textures as needed, and storing them for later to avoid repeat downloads.</p>
 <p>Given my more technical background, I am trying to force myself into situations where I do less programming and more game design. I think this project is a case of the opposite, and so I may put it on hold for a little while, and come back to it when I feel like a technical challenge.</p>
@@ -71,10 +81,12 @@ A short video of the ray-tracing demo. Unfortunately, your browser does not supp
 <p>Does this property of ‘instant readability’ exist outside of puzzle games? Maybe it has more to do with whether the game has a camera that selectively shows the state of the world, or how abstract the presentation of the game is — non-puzzle games can have these properties too.</p>
 <h4 id="prototyping">Prototyping</h4>
 <p>Inspired by these games, I put together the framework for a falling block game. The first demo just randomly drops blocks every <em>tick</em>, and deletes any row if it is filled, like Tetris — it makes for quite a nice screen-saver!</p>
+<figure>
 <video src="files/falling_blocks.mp4" poster="files/falling_blocks_snap.jpg" width="40%" controls loop>
 The first demo of the falling block game. Unfortunately, your browser does not support the video tag.
 </video>
-<p>If I have time next week, I will try to add some gameplay and make something more interesting with this.</p>
+</figure>
+<p>If I have time next week, I will try to add some game-play and make something more interesting with this.</p>
 <h4 id="this-weeks-thoughts-2">This Week’s Thoughts</h4>
 <ul>
 <li>I have enjoyed teaching programming for the last few years, but I have noticed that I remember less and less what it is like to learn for the first time — In some ways I think this will make me a less effective introductory teacher. I hope I can make up for this by planning my lessons more carefully, and taking in feedback.</li>
@@ -91,8 +103,29 @@ The first demo of the falling block game. Unfortunately, your browser does not s
 <ul>
 <li><a href="https://dan-ball.jp/en/">Dan-Ball</a> is a website full of weird and interesting games, and it has been around for a long time. <a href="https://dan-ball.jp/en/javagame/dust2/">Powder game</a> is my favourite, and <a href="https://dan-ball.jp/en/javagame/aquarium/">this weird plant simulator</a> is also cool.</li>
 </ul>
+<hr />
+<p>The remainder of this journal does not follow a weekly schedule. Given that some weeks had more relevant happenings than others, I have decided to move to topic-based posts instead of weekly.</p>
+<hr />
+<h2 id="the-implications-of-virtual-world-design">The Implications of Virtual World Design</h2>
+<p>I have always been fascinated by Massively Multi-player Games. Since my earliest exposure to on-line games, I have craved the experience of shared persistent spaces. As far as my memory is concerned, the first MMO I played was <a href="https://en.wikipedia.org/wiki/Old_School_RuneScape">RuneScape</a>. This game is unbelievably <a href="https://en.wikipedia.org/wiki/Grinding_%28gaming%29">grind-y</a>. It differs from many Role-Playing Games of the time, as it has no classes or races.</p>
+<figure>
+<img src="files/runescape_stats.png" alt="Screen-shot of Old School RuneScape, a recent official re-release of RuneScape 2 (2007)." /><figcaption>Screen-shot of <strong>Old School RuneScape</strong>, a recent official re-release of RuneScape 2 (2007).</figcaption>
+</figure>
+<p>In RuneScape, players have a large set of skills each of which starts at level 1, and can be increased to level 99. These skills had various impacts on the player’s capabilities in the game. High stats in <em>Strength</em> and <em>Attack</em> make a player effective at <em>mêlée</em> combat. Some stats, such as <em>Woodcutting</em> and <em>Fishing</em> allow players to collect resources from the game world.</p>
+<p>This freedom to create your own play-style in a free-form way has not been picked up by RPGs at large, though it solves one of their major common issues: when a player starts an RPG, they are usually presented with detailed and game-changing choices, and don’t have a clue what any of them will mean for their experience.</p>
+<figure>
+<img src="files/fallout4_stat_selection.jpg" alt="Fallout 4 (2015) presents the player with complex statistical decisions, while they likely have no idea what game-play impacts those choices will have." /><figcaption>Fallout 4 (2015) presents the player with complex statistical decisions, while they likely have no idea what game-play impacts those choices will have.</figcaption>
+</figure>
+<p>This progress structure has implications for the message of the game. MMORPGs that enforce game-play constraints on players who have selected a particular race or class at the start of the game may be making unintentional statements about segregation and real-world class hierarchies. World of Warcraft (2004) allows players to choose certain races, but the game has no concept of mixed races. In a small but very real way Blizzard have put forward the idea that races do not, or should not, mix. Additionally, WoW suggests that a player’s background decides the extent of what they can ever achieve.</p>
+<blockquote>
+<p><strong>“One cannot not communicate.”</strong><br />
+— <em><a href="https://en.wikipedia.org/wiki/Paul_Watzlawick#Five_basic_axioms">Paul Watzlawick</a>’s first axiom of communication</em></p>
+</blockquote>
+<p>In his <a href="https://gdcvault.com/play/1013804/MUD-Messrs-Bartle-and-Trubshaw">2010 GDC talk</a>, Richard Bartle outlines his (and his partner’s) design decisions for <a href="https://en.wikipedia.org/wiki/MUD1">MUD (1978)</a>, which is often considered the <em>first MMO</em>. MUD has 10 levels. All players start at level 1 and progress to level 10, with each step taking significant effort and often requiring assistance from other players. His rationale for this progression system stems from his own oppression in the British class system, being a northern lad with a strong accent. He created a world where no pre-existing class system exists, to give all players the freedom to succeed with equal footing.</p>
+<p>Though many modern MMOs stem from MUD, incorporating its level-based progress structure, I am hard pressed to find a single example that demonstrates some consideration for the meaning of this decision. In WoW, Guild Wars, and many others, the process of levelling up feels like a vestigial limb, a holdover from some old video game DNA that nobody wants to amputate. Players of these games use the term <strong>Endgame</strong> to describe activities to be done once the player has reached the maximum level, though in contrast most players believe this point to be where the game truly begins. Why not start the game here?</p>
+<p>To me, the pre-endgame phase of World of Warcraft feels like adolescence. It’s an awkward phase, where most players don’t truly fit in, just waiting for the moment that they can begin to play with the adults. When I first played WoW I never felt the desire to level up. I stayed in the early teens for a very long time (months!), while most players continued on to higher and higher levels. I was about 12 years old at the time — perhaps this is a reflection of my own subtle desire to never grow up.</p>
 <footer>
-This page was last updated on <strong>2018-12-28</strong>.<br>
+This page was last updated on <strong>2018-12-30</strong>.<br>
 Copyright Benedict Henshaw, all rights reserved.<br>
 </footer>
 </div>

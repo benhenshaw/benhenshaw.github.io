@@ -18,12 +18,11 @@ code { font-size: 0.8em; font-family: Source Code Pro, monospace; background-col
 code a { color:black; border: none; }
 code a:hover { border: none; }
 a code:hover { border-bottom: none; }
-figure { width: 100%; text-align: center; margin: 0;}
-figcaption { font-style: italic; }
+figure { width: 100%; text-align: center; margin: 1em 0 1em 0; }
+figcaption { font-style: italic; margin: 0 4em 0 4em;}
 img { display: block; max-width: 100%; margin: auto; }
 video { display: block; max-width: 100%; margin: auto; }
-blockquote { margin: 1em 2em 1em 2em; text-align: center; }
-blockquote p { text-align: center; }
+blockquote { margin: 1em 4em 1em 4em; font-size: 1.1em }
 table { margin: 1em auto 1em auto; width: 90%; border-spacing: 0; border-collapse: collapse; }
 th, td { border: 1px solid #ccc; padding: 0 0.2em 0 0.2em; }
 /*tr.odd { background-color: #eee; }*/
