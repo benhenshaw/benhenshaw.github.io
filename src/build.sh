@@ -18,7 +18,7 @@ echo > listing.md
 # The order that these files are read dictates what order they appear in
 # the site map, so for now I am just listing them manually in the order
 # that they were written, newest first.
-files="index.md listing.md net_for_games.md ma_journal.md landing_party.md soft_render_sdl2.md static_site.md"
+files="index.md listing.md ma_journal.md landing_party.md soft_render_sdl2.md static_site.md"
 
 for md_file in $files
 do

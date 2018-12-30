@@ -1,6 +1,4 @@
 
- --- [Intro to Networking for Games](net_for_games.html)
-
 2018-10-15 --- [MA Game Design Journal](ma_journal.html)
 
 2018-06-06 --- [Landing Party: An Escape Room](landing_party.html)
