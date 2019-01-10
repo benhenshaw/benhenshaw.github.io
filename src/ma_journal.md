@@ -13,6 +13,7 @@ This is a weekly journal kept during my MA in Independent Games and Playable Exp
 + [Week 03 --- Falling Blocks](#week-03-falling-blocks)
 + [Week 04 --- Magic Circle](#week-04-magic-circle)
 + [The Implications of Virtual World Design](#the-implications-of-virtual-world-design)
++ [Stylised Graphics in Video Games](#stylised-graphics-in-video-games)
 
 ---
 
@@ -129,8 +130,47 @@ This progress structure has implications for the message of the game. MMORPGs th
 
 In his [2010 GDC talk](https://gdcvault.com/play/1013804/MUD-Messrs-Bartle-and-Trubshaw), Richard Bartle outlines his design decisions for [MUD (1978)](https://en.wikipedia.org/wiki/MUD1), which is often considered the *first MMO*. MUD has 10 levels; all players start at level 1 and progress to level 10, with each step taking significant effort and often requiring assistance from other players. His rationale for this progression system stems from his own oppression in the British class system, being a northern lad with a strong accent. He created a world with no pre-existing class system, to give all players the freedom to succeed with equal footing, and also suggests that people should, and *must*, help each other to reach their goals.
 
-![The character creator in World of Warcraft (2004) forces players to choose their race and class to begin playing the game.](files/wow_character_creator.jpg)
+![The character creator in World of Warcraft (2004) forces players to choose their race, class to begin playing the game.](files/wow_character_creator.jpg)
 
 Though many modern MMOs stem from MUD, incorporating its level-based progress structure, I am hard pressed to find a single example that demonstrates some consideration for the meaning of this decision. In WoW, Guild Wars, and many others, the process of levelling up feels like a vestigial limb, a holdover from some old video game DNA that nobody wants to amputate. Players of these games use the term **Endgame** to describe activities to be done once the player has reached the maximum level, though in contrast most players believe this point to be where the game truly begins. Why not start the game here?
 
 To me, the pre-endgame phase of World of Warcraft feels like adolescence. It's an awkward phase, where most players don't truly fit in, just going through the motions, waiting for the moment that they can begin to play with the adults. When I first played WoW I never felt the desire to level up. I stayed in the early teens for a very long time (months!), while most players continued on to higher and higher levels. I was about 12 years old at the time --- perhaps this is a reflection of my own subtle desire to never grow up.
+
+---
+
+<!-- # We Don't Know What Video Games Are **TODO**
+Humans have been attempting to record their experiences for millennia. We painted walls with impressions of our surroundings; of the things we encountered; of ourselves. Nobody would tell these ancient people that they shouldn't have done this --- we seem to be unilaterally thankful for this peek into their lives, which greatly betters our understanding of the past and of ourselves.
+
+Nowadays, we continue to capture our thoughts and feelings in paint and sounds. But there is a disagreement about the value of such activities. I have yet to meet someone who doesn't indulge in the consumption or creation of an artistic medium. But our social systems, our schools, and often our parents don't seem to think its worthwhile. [STEM](https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics) is touted as the king of human activity, while arts are the ineffectual queen. But who wants to live in a world without art?
+
+As we continue our descent into the digital age, some of our long beloved mediums are making the leap to binary. Books became [Hypertext](https://en.wikipedia.org/wiki/Hypertext); musical performances became records which became .mp3 files; Theatre to film to on-line streaming video. But each of these hand-overs diverge from the original --- some are considered a poor approximation, others became wholly new, carrying a different message. In most cases, the original is still alive and well; sometimes as an act of protest against the virtual as with modern Vinyl records.
+
+![Taking the Evening Cool by Ryōgoku Bridge (1745) --- Okumura Masanobu](files/taking_the_evening_cool_by_ryogoku_bridge.jpg)
+
+Games pre-date living memory, but do modern video games attempt to approximate their analogue ancestors? There are early examples of digitising sports with [Pong (1972)](https://en.wikipedia.org/wiki/Pong) and the [slew](https://en.wikipedia.org/wiki/Tennis_(1984_video_game)) [of](https://en.wikipedia.org/wiki/Volleyball_(video_game)) [sports](https://en.wikipedia.org/wiki/Soccer_(1985_video_game)) [games](https://en.wikipedia.org/wiki/NES_Open_Tournament_Golf) for the [Nintendo Entertainment System](https://en.wikipedia.org/wiki/Nintendo_Entertainment_System), and one can find a version of Chess and Solitaire on any given computing platform. As video games moved beyond this the focus changed. Some designers began to embrace the unique properties of the medium, and produced works that did not imitate, and could not be recreated by other mediums. This trend has not defined the medium, as one might expect. We have not yet entered a future where all games embrace their medium.
+
+Video games' current trends are rooted in Capitalism, both in their content and their production. 'Proven' ideas are copied in attempts to replicate past profit. Video game retailers perpetuate a hysteria of endless sales and discounts. The games themselves encourage players to collect items and purchase objects, many of which have no discernible capabilities other than to be owned.
+
+What are video games in the modern world? Some consider them frivolous. Others hold them up as the most powerful medium with the most **potential** for social change.
+ -->
+
+## Stylised Graphics in Video Games
+In the mid 90s we passed a milestone in computing; real-time 3D games became a possibility. Since then, a subset of video games have been attempting to create photorealistic graphics. Companies like [id Software](https://en.wikipedia.org/wiki/Id_Software), [Infinity Ward](https://www.infinityward.com/), and [Naughty Dog](https://en.wikipedia.org/wiki/Naughty_Dog) have been making increasingly complex attempts at modelling the real world.
+
+Originally, these attempts were hampered by lack of processing power. As computers increased in complexity and capability, developer's techniques had to improve as well. For a time, many games embraced their low polygon counts and simple lighting, producing more cartoon-ish styles. Many of these games hold up fairly well, but those that attempted photorealism at the time look like hot garbage --- though this look has more recently come back into fashion ([Paratropic](https://arbitrarymetric.itch.io/paratopic), [Devil Daggers](http://devildaggers.com/), [Sokpop](https://sokpop.itch.io/)).
+
+![Quake (1996), Virtua Fighter (1993), \
+King's Quest: Mask of Eternity (1998), Tekken (1995)](files/90s_3d.jpg)
+
+In [John Carmack's 2013 QuakeCon talk](https://www.youtube.com/watch?v=P6UKhR0T6cs), he notes that as an industry we have moved beyond being limited by processing power or programming ability, and that the most important problem we are now faced with is cataloguing and better understanding the characteristics of the various materials we use in our virtual worlds. In the name of photorealism we have developed powerful graphics hardware and vastly more complex rendering systems; we're now *capable* of producing incredibly detailed and (arguably) believable worlds; but to what end?
+
+Many of my favourite games have distinctly unrealistic visual styles. Games like [Kentucky Route Zero](http://kentuckyroutezero.com/), [Katamari Damacy](https://en.wikipedia.org/wiki/Katamari_Damacy), and [Rock of Ages](https://en.wikipedia.org/wiki/Rock_of_Ages_%28video_game%29), take a drastically different approach to visual style. Many of these projects are produced by small teams with low budgets or time constraints, but have embraced their limitations to produce works of beauty.
+
+![Rock of Ages uses cut-outs from famous paintings for **all** of the games characters. 3D-modelling hundreds of characters would not have been feasible for this production.](files/rockofages.jpg)
+
+The costs of production for photorealism at the standards made possible by modern graphics hardware and techniques is immense. As independent developers, we cannot compete on this front; but honestly, who wants to? The short but dense history of video games has taught us that only games that choose style over realism will continue to look timelessly great.
+
+There are many techniques used to achieve this, but I think the key to finding your style is to consider your limitations and to be selective about what you put into the game. Don't try to include a poor attempt at high fidelity, just do a great job at low-fi! Break the rules: use 2D puppets in a 3D game (Rock of Ages), or render pixel-thin lines and untextured polygons (Kentucky Route Zero) --- whatever works.
+
+![Katamari Damacy (2004), The Legend of Zelda: The Wind Waker (2003),\
+Super Mario Sunshine (2002), Ōkami (2006)](files/nice_looking_older_3d_games.jpg)
