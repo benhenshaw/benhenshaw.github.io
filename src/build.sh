@@ -12,13 +12,19 @@ rm ../*.html
 # Create an empty file for the listing page.
 echo > listing.md
 
+# Prep index for listing to be appended
+cat index.md > index_tmp.md
+echo "\n---\n" >> index_tmp.md
+
 # Get all of the Markdown files in the current folder.
 # files=`ls -v *.md`
 
 # The order that these files are read dictates what order they appear in
 # the site map, so for now I am just listing them manually in the order
 # that they were written, newest first.
-files="index.md listing.md ma_journal.md landing_party.md soft_render_sdl2.md static_site.md"
+files=\
+"index_tmp.md portfolio.md ma_journal.md "\
+"landing_party.md soft_render_sdl2.md static_site.md"
 
 for md_file in $files
 do
@@ -34,7 +40,7 @@ do
     # Write this page to the site map, ignoring any that don't have a title.
     if [[ -n "$doc_title" ]]
     then
-        echo "$created --- [$doc_title]($file_base.html)\n" >> listing.md
+        echo "$created --- [$doc_title]($file_base.html)\n" >> index_tmp.md
     fi
 done
 
@@ -68,3 +74,6 @@ do
 
     rm tmp.html
 done
+
+# rm index_tmp.md
+mv ../index_tmp.html ../index.html
