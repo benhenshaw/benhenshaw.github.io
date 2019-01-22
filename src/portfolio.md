@@ -3,7 +3,7 @@ January 2019 \
 Go, JavaScript \
 [https://github.com/benhenshaw/screenplay](https://github.com/benhenshaw/screenplay) \
 
-A text-based (and web-based) multi-player improvisational real-time text adventure. Each player is given a character profile and a set of goals which they have to try to fulfil. The initial demo was built with a single scenario, but the project was constructed with the goal of supporting many different stories, each with its own set of characters and verbs. I used the explicit goals to incentivise role-play by rewarding players for the use of a characters *catch-phrase* or employing their speech patterns.
+A text-based (and web-based) multi-player improvisational real-time text adventure. Each player is given a character profile and a set of goals which they have to try to fulfil. The initial demo was built with a single scenario, but the project was constructed with the goal of supporting many different stories, each with its own set of characters and verbs. I used the explicit goals to incentivise role-play by rewarding players for the use of a character's *catch-phrase* or for employing their speech patterns.
 
 ![](files/screen_play_landing_page.png)
 
