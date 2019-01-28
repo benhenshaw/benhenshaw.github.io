@@ -25,7 +25,7 @@ C, SDL2 \
 
 A software-rendered 2.5D FPS (in the style of Wolfenstein 3D) with network multi-player.
 
-![](files/labyrinth_shot.png)
+![](files/labyrinth_shot.jpg)
 
 ---
 
@@ -36,7 +36,7 @@ C, SDL2 \
 
 Dissertation project for BSc Games Programming at Goldsmiths, University of London. It's a simple rhythm game, implemented in C with the intent to build as many components of the software myself within the time constraints. In the end I wrote a memory allocator, software renderer, audio mixer, asset file reading and writing, and the game-play code for this project myself.
 
-![](files/rhythm_shots_montage.png)
+![](files/rhythm_shots_montage.jpg)
 
 ---
 
@@ -45,7 +45,7 @@ Early 2018 \
 Escape Room (with additional software in C) \
 [See the article.](landing_party.html) \
 
-![](files/landing_party_shot.png)
+![](files/landing_party_shot.jpg)
 
 ---
 
@@ -54,7 +54,7 @@ Mid 2017 \
 Lua, Löve2D, LuaSocket \
 [https://salty.itch.io/magichands](https://salty.itch.io/magichands) \
 
-![](files/magic_hands.png)
+![](files/magic_hands.jpg)
 
 ---
 

@@ -106,7 +106,7 @@
 <div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb12-1" title="1"><span class="co">// Set the logical resolution to the resolution</span></a>
 <a class="sourceLine" id="cb12-2" title="2"><span class="co">// of our internal pixel buffer.</span></a>
 <a class="sourceLine" id="cb12-3" title="3">SDL_RenderSetLogicalSize(renderer, <span class="dv">320</span>, <span class="dv">240</span>);</a></code></pre></div>
-<p>Scaling will now keep a fixed aspect ratio, but if you are building a program with low-resolution (’retro’) graphics you may notice that each pixel on screen is not exactly the same size. This occurs when the internal (or logical) resolution is not a factor of the actual window resolution. This can also be fixed by using another SDL function.</p>
+<p>Scaling will now keep a fixed aspect ratio, but if you are building a program with low-resolution (‘retro’) graphics you may notice that each pixel on screen is not exactly the same size. This occurs when the internal (or logical) resolution is not a factor of the actual window resolution. This can also be fixed by using another SDL function.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb13-1" title="1"><span class="co">// This takes a boolean value; 1 isn&#39;t a special number.</span></a>
 <a class="sourceLine" id="cb13-2" title="2">SDL_RenderSetIntegerScale(renderer, <span class="dv">1</span>);</a></code></pre></div>
 <p>With these features enabled you are likely to see black bars around the pixel buffer. You may want to set the colour of this area, which you can do like so.</p>
