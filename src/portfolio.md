@@ -1,9 +1,18 @@
+## Breakfast
+February 2019 \
+C \
+[https://github.com/benhenshaw/breakfast](https://github.com/benhenshaw/breakfast)
+
+Serial communication library for UNIX (macOS, Linux, BSD) and Windows. I wanted a simple cross-platform way to communicate with my Arduino (though it also works with any standard serial device), so I wrote this.
+
+---
+
 ## Screen Play
 January 2019 \
 Go, JavaScript \
 [https://github.com/benhenshaw/screenplay](https://github.com/benhenshaw/screenplay) \
 
-A text-based (and web-based) multi-player improvisational real-time text adventure. Each player is given a character profile and a set of goals which they have to try to fulfil. The initial demo was built with a single scenario, but the project was constructed with the goal of supporting many different stories, each with its own set of characters and verbs. I used the explicit goals to incentivise role-play by rewarding players for the use of a character's *catch-phrase* or for employing their speech patterns.
+A text-based (and web-based) multi-player improvisational real-time text adventure game (and "engine"). Each player is given a character profile and a set of goals which they have to try to fulfil. The initial demo was built with a single scenario, but the project was constructed with the goal of supporting many different stories, each with its own set of characters and verbs. I used the explicit goals to incentivise role-play by rewarding players for the use of a character's *catch-phrase* or for employing their speech patterns.
 
 ![](files/screen_play_landing_page.png)
 
@@ -45,6 +54,7 @@ Early 2018 \
 Escape Room (with additional software in C) \
 [See the article.](landing_party.html) \
 
+An *escape room* built around the concept of limited communication. Players are split into two separate rooms and must use various limited communication channels to solve puzzles together. Built during my BSc in Games Programming.
 ![](files/landing_party_shot.jpg)
 
 ---
