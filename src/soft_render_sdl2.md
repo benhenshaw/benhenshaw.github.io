@@ -80,8 +80,21 @@ if (event.type == SDL_WINDOWEVENT)
 }
 ```
 
+And finally, the format of the pixels in the window is defined by the platform. SDL provides a few functions to deal with this, including [`SDL_MapRGBA`](https://wiki.libsdl.org/SDL_MapRGBA) to get a correctly formatted pixel, and [`SDL_GetRGBA`](https://wiki.libsdl.org/SDL_GetRGBA) to get the components back from a pixel. There are also versions that omit the alpha channel: [`SDL_MapRGB`](https://wiki.libsdl.org/SDL_MapRGB) and [`SDL_GetRGB`](https://wiki.libsdl.org/SDL_GetRGB).
+
+```C
+// Pack these RGBA values into a pixel of the correct format.
+Uint32 pixel = SDL_MapRGBA(window_surface->format, 200, 130, 100, 255);
+
+// Get the components back out of that packed pixel.
+Uint8 r, g, b, a;
+SDL_GetRGBA(pixel, window_surface->format, &r, &g, &b, &a);
+```
+
+If you're using a predefined colour palette, it is worth converting all of your colours once up front, then saving the packed pixels for use in your graphics code.
+
 ### Summary
-This method is great to get jump started with software rendering in SDL2, and may work best on some platforms, such as the [Raspberry Pi](https://www.raspberrypi.org/). It takes a single function call to get access to the buffer, and another to update the window and show your graphics on screen. The downsides are that you may need to perform some kind of conversion if you aren't using the same pixel format in the rest of your code, and that you will need to access a new pixel buffer whenever the resolution of the window changes. Also, there is no way to enable [vertical sync](https://en.wikipedia.org/wiki/Screen_tearing).
+This method is great to get jump started with software rendering in SDL2, and may work best on some platforms, such as the [Raspberry Pi](https://www.raspberrypi.org/). It takes a single function call to get access to the buffer, and another to update the window and show your graphics on screen. The downsides are that you may need to perform a pixel format conversion if you aren't using the same pixel format in the rest of your code, and that you will need to access a new pixel buffer whenever the resolution of the window changes. Also, there is no way to enable [vertical sync](https://en.wikipedia.org/wiki/Screen_tearing).
 
 [Click here to see the complete code example for accessing the window buffer.](files/sdl2_window_buffer.c)
 

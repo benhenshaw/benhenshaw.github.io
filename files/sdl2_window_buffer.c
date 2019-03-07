@@ -43,7 +43,8 @@ int main()
         {
             for (int x = 0; x < width; ++x)
             {
-                pixels[x + y * width] = 0xffffffff;
+                pixels[x + y * width] =
+                    SDL_MapRGBA(window_surface->format, 200, 100, 250, 255);
             }
         }
 
