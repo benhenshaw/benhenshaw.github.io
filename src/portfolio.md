@@ -1,3 +1,14 @@
+## Lost Space
+April 2019 \
+C \
+[benedicthenshaw.com/lostspace](/lostspace)
+
+A persistent virtual space using simple stateless procedural generation, inhabited by spaceships that tell your their thoughts as you fly by.
+
+![](files/lost_space.png)
+
+---
+
 ## Breakfast
 February 2019 \
 C \
