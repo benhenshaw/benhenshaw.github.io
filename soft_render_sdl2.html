@@ -16,68 +16,68 @@
 <!-- Created: 2018-05-24 -->
 <h1 id="intro-to-software-rendering-with-sdl2">Intro to Software Rendering with SDL2</h1>
 <p>Lets display some pixel data on the screen with <a href="https://libsdl.org/">SDL2</a> in C. There are a few ways to do this, each with their own trade-offs. I am going to assume that you already have SDL2 set up. Here is the basic framework that our program will use, with the relevant pieces slotted in where the comments are.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb1-1" title="1"><span class="pp">#include </span><span class="im">&lt;SDL2/SDL.h&gt;</span></a>
-<a class="sourceLine" id="cb1-2" title="2"></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="dt">int</span> main()</a>
-<a class="sourceLine" id="cb1-4" title="4">{</a>
-<a class="sourceLine" id="cb1-5" title="5">    SDL_Init(SDL_INIT_VIDEO);</a>
-<a class="sourceLine" id="cb1-6" title="6"></a>
-<a class="sourceLine" id="cb1-7" title="7">    SDL_Window * window = SDL_CreateWindow(<span class="st">&quot;&quot;</span>,</a>
-<a class="sourceLine" id="cb1-8" title="8">        SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,</a>
-<a class="sourceLine" id="cb1-9" title="9">        <span class="dv">640</span>, <span class="dv">480</span>,</a>
-<a class="sourceLine" id="cb1-10" title="10">        <span class="dv">0</span>);</a>
-<a class="sourceLine" id="cb1-11" title="11"></a>
-<a class="sourceLine" id="cb1-12" title="12">    <span class="co">//</span></a>
-<a class="sourceLine" id="cb1-13" title="13">    <span class="co">// Set up the method for displaying the pixel buffer.</span></a>
-<a class="sourceLine" id="cb1-14" title="14">    <span class="co">//</span></a>
-<a class="sourceLine" id="cb1-15" title="15"></a>
-<a class="sourceLine" id="cb1-16" title="16">    <span class="cf">while</span> (<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb1-17" title="17">    {</a>
-<a class="sourceLine" id="cb1-18" title="18">        SDL_Event event;</a>
-<a class="sourceLine" id="cb1-19" title="19">        <span class="cf">while</span> (SDL_PollEvent(&amp;event))</a>
-<a class="sourceLine" id="cb1-20" title="20">        {</a>
-<a class="sourceLine" id="cb1-21" title="21">            <span class="cf">if</span> (event.type == SDL_QUIT) exit(<span class="dv">0</span>);</a>
-<a class="sourceLine" id="cb1-22" title="22">        }</a>
-<a class="sourceLine" id="cb1-23" title="23"></a>
-<a class="sourceLine" id="cb1-24" title="24">        <span class="co">//</span></a>
-<a class="sourceLine" id="cb1-25" title="25">        <span class="co">// Display the pixel buffer here.</span></a>
-<a class="sourceLine" id="cb1-26" title="26">        <span class="co">//</span></a>
-<a class="sourceLine" id="cb1-27" title="27">    }</a>
-<a class="sourceLine" id="cb1-28" title="28">}</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1"></a><span class="pp">#include </span><span class="im">&lt;SDL2/SDL.h&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="dt">int</span> main()</span>
+<span id="cb1-4"><a href="#cb1-4"></a>{</span>
+<span id="cb1-5"><a href="#cb1-5"></a>    SDL_Init(SDL_INIT_VIDEO);</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a>    SDL_Window * window = SDL_CreateWindow(<span class="st">&quot;&quot;</span>,</span>
+<span id="cb1-8"><a href="#cb1-8"></a>        SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,</span>
+<span id="cb1-9"><a href="#cb1-9"></a>        <span class="dv">640</span>, <span class="dv">480</span>,</span>
+<span id="cb1-10"><a href="#cb1-10"></a>        <span class="dv">0</span>);</span>
+<span id="cb1-11"><a href="#cb1-11"></a></span>
+<span id="cb1-12"><a href="#cb1-12"></a>    <span class="co">//</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>    <span class="co">// Set up the method for displaying the pixel buffer.</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>    <span class="co">//</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a>    <span class="cf">while</span> (<span class="dv">1</span>)</span>
+<span id="cb1-17"><a href="#cb1-17"></a>    {</span>
+<span id="cb1-18"><a href="#cb1-18"></a>        SDL_Event event;</span>
+<span id="cb1-19"><a href="#cb1-19"></a>        <span class="cf">while</span> (SDL_PollEvent(&amp;event))</span>
+<span id="cb1-20"><a href="#cb1-20"></a>        {</span>
+<span id="cb1-21"><a href="#cb1-21"></a>            <span class="cf">if</span> (event.type == SDL_QUIT) exit(<span class="dv">0</span>);</span>
+<span id="cb1-22"><a href="#cb1-22"></a>        }</span>
+<span id="cb1-23"><a href="#cb1-23"></a></span>
+<span id="cb1-24"><a href="#cb1-24"></a>        <span class="co">//</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a>        <span class="co">// Display the pixel buffer here.</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a>        <span class="co">//</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a>    }</span>
+<span id="cb1-28"><a href="#cb1-28"></a>}</span></code></pre></div>
 <h2 id="method-1-accessing-the-window-buffer">Method 1: <em>Accessing the Window Buffer</em></h2>
 <p>The simplest method of getting pixels on screen is the function <a href="https://wiki.libsdl.org/SDL_GetWindowSurface"><code>SDL_GetWindowSurface</code></a>. It gives back an <a href="https://wiki.libsdl.org/SDL_Surface"><code>SDL_Surface</code></a> containing our pixel buffer. We can then modify this buffer and display the changes we made using <a href="https://wiki.libsdl.org/SDL_UpdateWindowSurface"><code>SDL_UpdateWindowSurface</code></a>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb2-1" title="1">SDL_Surface * window_surface = SDL_GetWindowSurface(window);</a></code></pre></div>
-<p>Within this structure there is a pointer to the raw pixel buffer called <code>pixels</code>. This pointer is of type <code>void *</code>, so we need to cast it to be able to use it. You can do this by assigning the value of the internal pointer to your own pointer of the correct type — <code>unsigned int</code><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb3-1" title="1"><span class="dt">unsigned</span> <span class="dt">int</span> * pixels = window_surface-&gt;pixels;</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1"></a>SDL_Surface * window_surface = SDL_GetWindowSurface(window);</span></code></pre></div>
+<p>Within this structure there is a pointer to the raw pixel buffer called <code>pixels</code>. This pointer is of type <code>void *</code>, so we need to cast it to be able to use it. You can do this by assigning the value of the internal pointer to your own pointer of the correct type — <code>unsigned int</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1"></a><span class="dt">unsigned</span> <span class="dt">int</span> * pixels = window_surface-&gt;pixels;</span></code></pre></div>
 <p>You can now access the pixel buffer directly. To set values of pixels using their <code>(x, y)</code> coordinates, you must use the formula <code>x + y * width</code> — where <code>width</code> is the width of the pixel buffer — to index into the buffer.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb4-1" title="1"><span class="co">// The coordinates of our pixel.</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="dt">int</span> x = <span class="dv">10</span>;</a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="dt">int</span> y = <span class="dv">30</span>;</a>
-<a class="sourceLine" id="cb4-4" title="4"></a>
-<a class="sourceLine" id="cb4-5" title="5"><span class="co">// You can get the width value from the surface itself if needed.</span></a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="dt">int</span> width = window_surface-&gt;w;</a>
-<a class="sourceLine" id="cb4-7" title="7"></a>
-<a class="sourceLine" id="cb4-8" title="8">pixels[x + y * width] = <span class="bn">0xffffffff</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">// The coordinates of our pixel.</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="dt">int</span> x = <span class="dv">10</span>;</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="dt">int</span> y = <span class="dv">30</span>;</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co">// You can get the width value from the surface itself if needed.</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="dt">int</span> width = window_surface-&gt;w;</span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8"></a>pixels[x + y * width] = <span class="bn">0xffffffff</span>;</span></code></pre></div>
 <p>Here I have used hexadecimal notation to specify the colour (white) that the pixel should be set. This is the part where this method of accessing the pixel buffer becomes more tricky, as the channel order (e.g. <code>RGBA</code>, <code>ARGB</code>, <code>BGRA</code>, …) can vary between platforms and for other factors. You can find out what the pixel format is by reading the value at <a href="https://wiki.libsdl.org/SDL_PixelFormat"><code>window_surface-&gt;format-&gt;format</code></a>, and you can print that out in a readable way using <a href="https://wiki.libsdl.org/SDL_GetPixelFormatName"><code>SDL_GetPixelFormatName</code></a>.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb5-1" title="1">puts(SDL_GetPixelFormatName(window_surface-&gt;format-&gt;format));</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1"></a>puts(SDL_GetPixelFormatName(window_surface-&gt;format-&gt;format));</span></code></pre></div>
 <p>Another necessary evil of this method is that if you change resolution at any point, perhaps if you are using a resizeable window or switch to full-screen mode, you will need to call <code>SDL_GetWindowSurface</code> again and get a new surface, as the original pointer is now invalid.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb6-1" title="1"><span class="co">// You should get the new pixel buffer whenever</span></a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="co">// a SIZE_CHANGED window event comes in.</span></a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="cf">if</span> (event.type == SDL_WINDOWEVENT)</a>
-<a class="sourceLine" id="cb6-4" title="4">{</a>
-<a class="sourceLine" id="cb6-5" title="5">    <span class="cf">if</span> (event.window.event == SDL_WINDOWEVENT_SIZE_CHANGED)</a>
-<a class="sourceLine" id="cb6-6" title="6">    {</a>
-<a class="sourceLine" id="cb6-7" title="7">        window_surface = SDL_GetWindowSurface(window);</a>
-<a class="sourceLine" id="cb6-8" title="8">        pixels = window_surface-&gt;pixels;</a>
-<a class="sourceLine" id="cb6-9" title="9">    }</a>
-<a class="sourceLine" id="cb6-10" title="10">}</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">// You should get the new pixel buffer whenever</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="co">// a SIZE_CHANGED window event comes in.</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="cf">if</span> (event.type == SDL_WINDOWEVENT)</span>
+<span id="cb6-4"><a href="#cb6-4"></a>{</span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="cf">if</span> (event.window.event == SDL_WINDOWEVENT_SIZE_CHANGED)</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    {</span>
+<span id="cb6-7"><a href="#cb6-7"></a>        window_surface = SDL_GetWindowSurface(window);</span>
+<span id="cb6-8"><a href="#cb6-8"></a>        pixels = window_surface-&gt;pixels;</span>
+<span id="cb6-9"><a href="#cb6-9"></a>    }</span>
+<span id="cb6-10"><a href="#cb6-10"></a>}</span></code></pre></div>
 <p>And finally, the format of the pixels in the window is defined by the platform. SDL provides a few functions to deal with this, including <a href="https://wiki.libsdl.org/SDL_MapRGBA"><code>SDL_MapRGBA</code></a> to get a correctly formatted pixel, and <a href="https://wiki.libsdl.org/SDL_GetRGBA"><code>SDL_GetRGBA</code></a> to get the components back from a pixel. There are also versions that omit the alpha channel: <a href="https://wiki.libsdl.org/SDL_MapRGB"><code>SDL_MapRGB</code></a> and <a href="https://wiki.libsdl.org/SDL_GetRGB"><code>SDL_GetRGB</code></a>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb7-1" title="1"><span class="co">// Pack these RGBA values into a pixel of the correct format.</span></a>
-<a class="sourceLine" id="cb7-2" title="2">Uint32 pixel = SDL_MapRGBA(window_surface-&gt;format, <span class="dv">200</span>, <span class="dv">130</span>, <span class="dv">100</span>, <span class="dv">255</span>);</a>
-<a class="sourceLine" id="cb7-3" title="3"></a>
-<a class="sourceLine" id="cb7-4" title="4"><span class="co">// Get the components back out of that packed pixel.</span></a>
-<a class="sourceLine" id="cb7-5" title="5">Uint8 r, g, b, a;</a>
-<a class="sourceLine" id="cb7-6" title="6">SDL_GetRGBA(pixel, window_surface-&gt;format, &amp;r, &amp;g, &amp;b, &amp;a);</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">// Pack these RGBA values into a pixel of the correct format.</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>Uint32 pixel = SDL_MapRGBA(window_surface-&gt;format, <span class="dv">200</span>, <span class="dv">130</span>, <span class="dv">100</span>, <span class="dv">255</span>);</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co">// Get the components back out of that packed pixel.</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>Uint8 r, g, b, a;</span>
+<span id="cb7-6"><a href="#cb7-6"></a>SDL_GetRGBA(pixel, window_surface-&gt;format, &amp;r, &amp;g, &amp;b, &amp;a);</span></code></pre></div>
 <p>If you’re using a predefined colour palette, it is worth converting all of your colours once up front, then saving the packed pixels for use in your graphics code.</p>
 <h3 id="summary">Summary</h3>
 <p>This method is great to get jump started with software rendering in SDL2, and may work best on some platforms, such as the <a href="https://www.raspberrypi.org/">Raspberry Pi</a>. It takes a single function call to get access to the buffer, and another to update the window and show your graphics on screen. The downsides are that you may need to perform a pixel format conversion if you aren’t using the same pixel format in the rest of your code, and that you will need to access a new pixel buffer whenever the resolution of the window changes. Also, there is no way to enable <a href="https://en.wikipedia.org/wiki/Screen_tearing">vertical sync</a>.</p>
@@ -85,48 +85,48 @@
 <h2 id="method-2-streaming-texture">Method 2: <em>Streaming Texture</em></h2>
 <p>The second method of displaying a pixel buffer on screen is via a ‘streaming’ texture. This is a chunk of GPU-side memory that is displayed on screen, which you can modify using a graphics API such as OpenGL or DirectX. SDL2 offers a simple method to use streaming textures that handles the API calls for you, using its <a href="https://wiki.libsdl.org/CategoryRender">2D Accelerated Rendering API</a>. This method requires more work to set up, but provides features that may make it easier for you to work with the pixel buffer.</p>
 <p>Firstly, we must create an <a href="https://wiki.libsdl.org/SDL_Renderer"><code>SDL_Renderer</code></a>, and an <a href="https://wiki.libsdl.org/SDL_Texture"><code>SDL_Texture</code></a>.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb8-1" title="1"><span class="co">// Create a renderer with V-Sync enabled.</span></a>
-<a class="sourceLine" id="cb8-2" title="2">SDL_Renderer * renderer = SDL_CreateRenderer(window,</a>
-<a class="sourceLine" id="cb8-3" title="3">    <span class="dv">-1</span>, SDL_RENDERER_PRESENTVSYNC);</a>
-<a class="sourceLine" id="cb8-4" title="4"></a>
-<a class="sourceLine" id="cb8-5" title="5"><span class="co">// Create a streaming texture of size 320 x 240.</span></a>
-<a class="sourceLine" id="cb8-6" title="6">SDL_Texture * screen_texture = SDL_CreateTexture(renderer,</a>
-<a class="sourceLine" id="cb8-7" title="7">    SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_STREAMING,</a>
-<a class="sourceLine" id="cb8-8" title="8">    <span class="dv">320</span>, <span class="dv">240</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">// Create a renderer with V-Sync enabled.</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>SDL_Renderer * renderer = SDL_CreateRenderer(window,</span>
+<span id="cb8-3"><a href="#cb8-3"></a>    -<span class="dv">1</span>, SDL_RENDERER_PRESENTVSYNC);</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co">// Create a streaming texture of size 320 x 240.</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>SDL_Texture * screen_texture = SDL_CreateTexture(renderer,</span>
+<span id="cb8-7"><a href="#cb8-7"></a>    SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_STREAMING,</span>
+<span id="cb8-8"><a href="#cb8-8"></a>    <span class="dv">320</span>, <span class="dv">240</span>);</span></code></pre></div>
 <p>You may have noticed that in the call to <code>SDL_CreateTexture</code> that I specified the pixel format using the flag <code>SDL_PIXELFORMAT_RGBA8888</code>. This means that our texture is guaranteed to use the <code>RGBA</code> format, but there are <a href="https://wiki.libsdl.org/SDL_PixelFormatEnum">many formats</a> you can choose. I also specified the resolution (<code>320x240</code>) in this call, and enabled V-Sync. This resolution does not need to be the same as your window resolution, as you will see later on.</p>
 <p>As the texture is likely to be stored in GPU memory, we cannot access it with a pointer. In order to have a buffer we can modify directly we must create it ourselves.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb9-1" title="1"><span class="co">// Create a buffer large enough to hold the same</span></a>
-<a class="sourceLine" id="cb9-2" title="2"><span class="co">// number of pixels as the GPU-side texture.</span></a>
-<a class="sourceLine" id="cb9-3" title="3"><span class="co">// 320 is our width.</span></a>
-<a class="sourceLine" id="cb9-4" title="4"><span class="co">// 240 is our height.</span></a>
-<a class="sourceLine" id="cb9-5" title="5"><span class="co">// 4 is the size in bytes of a single RGBA pixel.</span></a>
-<a class="sourceLine" id="cb9-6" title="6"><span class="dt">unsigned</span> <span class="dt">int</span> * pixels = malloc(<span class="dv">320</span> * <span class="dv">240</span> * <span class="dv">4</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1"></a><span class="co">// Create a buffer large enough to hold the same</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="co">// number of pixels as the GPU-side texture.</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="co">// 320 is our width.</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co">// 240 is our height.</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="co">// 4 is the size in bytes of a single RGBA pixel.</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="dt">unsigned</span> <span class="dt">int</span> * pixels = malloc(<span class="dv">320</span> * <span class="dv">240</span> * <span class="dv">4</span>);</span></code></pre></div>
 <p>We now have everything we need to display our graphics on screen, but this must be done in a few stages. Firstly, we must get our pixel data from the <code>pixels</code> buffer into the <code>screen_texture</code>. This is done using the function <a href="https://wiki.libsdl.org/SDL_UpdateTexture"><code>SDL_UpdateTexture</code></a>.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb10-1" title="1">SDL_UpdateTexture(screen_texture, NULL, pixels, <span class="dv">320</span> * <span class="dv">4</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1"></a>SDL_UpdateTexture(screen_texture, NULL, pixels, <span class="dv">320</span> * <span class="dv">4</span>);</span></code></pre></div>
 <p>The <code>NULL</code> in this call is where you can specify a rectangular sub-section of the texture to update, if you only want to change it partially. We want to change the whole thing, so we pass <code>NULL</code> instead of a pointer to an <code>SDL_Rect</code>. The final parameter is the ‘pitch’ of the buffer, which is the number of bytes that make up a single row of pixels — <code>320</code> is our width, and <code>4</code> is the number of bytes in a single pixel.</p>
 <p>Now that our pixel data is in the texture, we need to display that texture on the screen. This is done using <a href="https://wiki.libsdl.org/SDL_RenderCopy"><code>SDL_RenderCopy</code></a>.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb11-1" title="1">SDL_RenderCopy(renderer, screen_texture, NULL, NULL);</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb11-1"><a href="#cb11-1"></a>SDL_RenderCopy(renderer, screen_texture, NULL, NULL);</span></code></pre></div>
 <p>Same as before, the <code>NULL</code>s mean display the entire texture across the entire window; texture will be stretched to fill the entire window. This allows us to display a pixel buffer that is lower (or higher) resolution than our window. Now that we have rendered our texture we must display the result of our rendering using <a href="https://wiki.libsdl.org/SDL_RenderPresent"><code>SDL_RenderPresent</code></a>.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb12-1" title="1">SDL_RenderPresent(renderer);</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1"></a>SDL_RenderPresent(renderer);</span></code></pre></div>
 <p>An now our internal pixel buffer should be displayed on screen.</p>
 <h3 id="extras">Extras</h3>
 <p>I mentioned that our call to <code>SDL_RenderCopy</code> will perform stretching, but this stretching is done 1:1 with the window resolution, meaning the original pixel buffer may be stretched by different amounts in x and y. To change this, ensuring that the aspect ratio of the original image is sustained we can use <a href="https://wiki.libsdl.org/SDL_RenderSetLogicalSize"><code>SDL_RenderSetLogicalSize</code></a> just after creating the renderer. It uses <a href="https://en.wikipedia.org/wiki/Letterboxing_(filming)">letterboxing</a> to achieve this. This function will also change the mouse position values such that they line up with the ‘logical’ resolution specified.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb13-1" title="1"><span class="co">// Set the logical resolution to the resolution</span></a>
-<a class="sourceLine" id="cb13-2" title="2"><span class="co">// of our internal pixel buffer.</span></a>
-<a class="sourceLine" id="cb13-3" title="3">SDL_RenderSetLogicalSize(renderer, <span class="dv">320</span>, <span class="dv">240</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb13-1"><a href="#cb13-1"></a><span class="co">// Set the logical resolution to the resolution</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="co">// of our internal pixel buffer.</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>SDL_RenderSetLogicalSize(renderer, <span class="dv">320</span>, <span class="dv">240</span>);</span></code></pre></div>
 <p>Scaling will now keep a fixed aspect ratio, but if you are building a program with low-resolution (‘retro’) graphics you may notice that each pixel on screen is not exactly the same size. This occurs when the internal (or logical) resolution is not a factor of the actual window resolution. This can also be fixed by using another SDL function.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb14-1" title="1"><span class="co">// This takes a boolean value; 1 isn&#39;t a special number.</span></a>
-<a class="sourceLine" id="cb14-2" title="2">SDL_RenderSetIntegerScale(renderer, <span class="dv">1</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb14-1"><a href="#cb14-1"></a><span class="co">// This takes a boolean value; 1 isn&#39;t a special number.</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>SDL_RenderSetIntegerScale(renderer, <span class="dv">1</span>);</span></code></pre></div>
 <p>With these features enabled you are likely to see black bars around the pixel buffer. You may want to set the colour of this area, which you can do like so.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb15-1" title="1"><span class="co">// Set the colour to red.</span></a>
-<a class="sourceLine" id="cb15-2" title="2">SDL_SetRenderDrawColor(renderer, <span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">255</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb15-1"><a href="#cb15-1"></a><span class="co">// Set the colour to red.</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>SDL_SetRenderDrawColor(renderer, <span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">255</span>);</span></code></pre></div>
 <h3 id="summary-1">Summary</h3>
 <p>This method has many features that make it easier and more reliable to work with than the first, but it does take some more work to set it up. I recommend that anyone using SDL2 that wants to perform software rendering should give both methods a try, as they differ in performance on various platforms, though this second method is more often the better choice.</p>
 <p><a href="files/sdl2_streaming_buffer.c">Click here to see the complete code example for rendering with a streaming texture.</a></p>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>It is more correct to use <code>uint32_t</code>, which is defined in <code>&lt;stdint.h&gt;</code>. SDL also provides a <code>typedef</code>’d version of this type called <code>Uint32</code>, which you could use instead.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>It is more correct to use <code>uint32_t</code>, which is defined in <code>&lt;stdint.h&gt;</code>. SDL also provides a <code>typedef</code>’d version of this type called <code>Uint32</code>, which you could use instead.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 <footer>
